@@ -7,3 +7,5 @@ node_modules/
 staticfiles/
 .pytest_cache/
 .coverage
+db.sqlite3
+*.sqlite3
