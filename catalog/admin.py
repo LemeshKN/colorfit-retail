@@ -1,5 +1,8 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from django.contrib import admin, messages
+
+from .services import check_catalog_health
 
 from .models import (
     BottomColor,
@@ -40,9 +43,43 @@ class ShadeInline(admin.TabularInline):
     extra = 0
 
 
+@admin.action(description="Check catalog health")
+def run_catalog_health_check(modeladmin, request, queryset):
+    report = check_catalog_health()
+    if report.is_ok:
+        modeladmin.message_user(
+            request, "Catalog health: all checks passed.", messages.SUCCESS
+        )
+        return
+
+    for item in report.short_shades[:10]:
+        modeladmin.message_user(
+            request,
+            f"{item['tone']} + {item['family']} has {item['visible']} visible "
+            f"shades. It needs at least 3.",
+            messages.ERROR,
+        )
+    if len(report.short_shades) > 10:
+        modeladmin.message_user(
+            request,
+            f"{len(report.short_shades) - 10} more combinations have fewer "
+            f"than 3 visible shades.",
+            messages.ERROR,
+        )
+    if report.missing_pairings:
+        sample = report.missing_pairings[0]
+        modeladmin.message_user(
+            request,
+            f"{len(report.missing_pairings)} family and bottom type "
+            f"combinations have no pairing rule. Example: "
+            f"{sample['family']} + {sample['bottom_type']}.",
+            messages.WARNING,
+        )
+
 @admin.register(ColorFamily)
 class ColorFamilyAdmin(admin.ModelAdmin):
     list_display = ["name", "slug", "sort_order"]
+    actions = [run_catalog_health_check]
     prepopulated_fields = {"slug": ("name",)}
     inlines = [ShadeInline]
 
