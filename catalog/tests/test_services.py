@@ -4,9 +4,15 @@ from django.core.management import call_command
 from catalog.services import (
     InvalidCardError,
     check_catalog_health,
+    get_bottom_type,
     get_bottom_types,
+    get_family,
+    get_garment,
     get_pairings,
+    get_shade,
     get_visible_shades,
+    list_families,
+    list_garments,
     normalize_card_code,
     resolve_card,
 )
@@ -213,3 +219,41 @@ def test_admin_action_reports_short_shades(admin_client):
 
     assert response.status_code == 200
     assert "It needs at least 3" in response.content.decode()
+
+
+# lookups used by the pages
+
+def test_list_garments_returns_all():
+    a, b = GarmentTypeFactory(), GarmentTypeFactory()
+    assert set(list_garments()) == {a, b}
+
+
+def test_get_garment_by_slug():
+    garment = GarmentTypeFactory(slug="shirt")
+    assert get_garment("shirt") == garment
+    assert get_garment("nope") is None
+
+
+def test_list_families_in_sort_order_with_sample_hex():
+    second = ColorFamilyFactory(sort_order=2)
+    first = ColorFamilyFactory(sort_order=1)
+    ShadeFactory(family=first, hex="#112233")
+
+    families = list(list_families())
+
+    assert families == [first, second]
+    assert families[0].sample_hex == "#112233"
+    assert families[1].sample_hex is None
+
+
+def test_get_family_shade_and_bottom_type():
+    family = ColorFamilyFactory(slug="maroon")
+    shade = ShadeFactory(family=family)
+    bottom = BottomTypeFactory(slug="jeans")
+
+    assert get_family("maroon") == family
+    assert get_family("nope") is None
+    assert get_shade(shade.pk) == shade
+    assert get_shade(999999) is None
+    assert get_bottom_type("jeans") == bottom
+    assert get_bottom_type("nope") is None

@@ -1,7 +1,8 @@
 import re
 from dataclasses import dataclass, field
 
-from django.db.models import Case, Count, IntegerField, Value, When
+from django.db.models import Case, Count, IntegerField, OuterRef, Subquery, Value, When
+from .models import Shade 
 
 from .models import (
     BottomType,
@@ -139,3 +140,32 @@ def check_catalog_health():
                 )
 
     return report
+
+def list_garments():
+    return GarmentType.objects.order_by("id")
+
+
+def get_garment(slug):
+    return GarmentType.objects.filter(slug=slug).first()
+
+
+def list_families():
+    """Color families in sort order. Each has sample_hex, the hex of its first shade."""
+    first_hex = (
+        Shade.objects.filter(family=OuterRef("pk")).order_by("id").values("hex")[:1]
+    )
+    return ColorFamily.objects.annotate(sample_hex=Subquery(first_hex)).order_by(
+        "sort_order"
+    )
+
+
+def get_family(slug):
+    return ColorFamily.objects.filter(slug=slug).first()
+
+
+def get_shade(shade_id):
+    return Shade.objects.select_related("family").filter(pk=shade_id).first()
+
+
+def get_bottom_type(slug):
+    return BottomType.objects.filter(slug=slug).first()

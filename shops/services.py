@@ -3,7 +3,7 @@ from django.utils import timezone
 
 from catalog.services import InvalidCardError
 
-from .models import AdviceSession
+from .models import AdviceSession, Shop 
 
 
 def record_session(shop, card, device_id, garment=None):
@@ -58,3 +58,11 @@ def unique_visits_report(shop, date_range):
         "counted_visits": sum(d["unique_devices"] for d in days),
         "days": days,
     }
+
+def list_active_shops():
+    return Shop.objects.filter(is_active=True).order_by("city", "name")
+
+
+def get_active_shop(slug):
+    """Case does not matter: 'SH-014' and 'sh-014' find the same shop."""
+    return Shop.objects.filter(slug=(slug or "").lower(), is_active=True).first()

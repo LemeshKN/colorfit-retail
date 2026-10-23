@@ -1,0 +1,16 @@
+{% extends "advisor/base.html" %}{% load i18n %}
+{% block title %}{{ shop.name }}{% endblock %}
+{% block content %}
+<h1 class="mb-1 text-2xl font-bold">{{ shop.name }}</h1>
+<p class="mb-4">{% trans "Enter the card ID that the staff gave you." %}</p>
+<form method="post" class="space-y-3">
+  {% csrf_token %}
+  <label for="{{ form.card_id.id_for_label }}" class="block font-semibold">{{ form.card_id.label }}</label>
+  {{ form.card_id }}
+  {% for error in form.card_id.errors %}
+  <p class="font-semibold text-error">{{ error }}</p>
+  {% endfor %}
+  <button type="submit" class="btn btn-primary btn-lg w-full">{% trans "Continue" %}</button>
+</form>
+<p class="mt-6 text-sm">{% trans "This site remembers your device to count visits. It does not store your name or photo." %}</p>
+{% endblock %}

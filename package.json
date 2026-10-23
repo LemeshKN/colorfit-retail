@@ -1,0 +1,27 @@
+{
+  "name": "colorfit-retail",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "build:css": "tailwindcss -i ./static_src/input.css -o ./static/css/app.css --minify",
+  "watch:css": "tailwindcss -i ./static_src/input.css -o ./static/css/app.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LemeshKN/colorfit-retail.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/LemeshKN/colorfit-retail/issues"
+  },
+  "homepage": "https://github.com/LemeshKN/colorfit-retail#readme",
+  "description": "",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "daisyui": "^5.7.50",
+    "tailwindcss": "^4.3.3"
+  }
+}

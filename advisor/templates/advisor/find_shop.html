@@ -1,0 +1,17 @@
+{% extends "advisor/base.html" %}{% load i18n %}
+{% block title %}{% trans "Find a shop" %}{% endblock %}
+{% block content %}
+<h1 class="mb-2 text-2xl font-bold">{% trans "Find your shop" %}</h1>
+<p class="mb-4">{% trans "Pick the shop you are in. Staff there will help you with your card." %}</p>
+<ul class="space-y-3">
+  {% for shop in shops %}
+  <li>
+    <a class="btn btn-outline btn-lg w-full justify-between" href="{% url 'advisor:card_entry' shop_slug=shop.slug %}">
+      <span>{{ shop.name }}</span><span class="text-sm font-normal">{{ shop.city }}</span>
+    </a>
+  </li>
+  {% empty %}
+  <li>{% trans "No shops are listed yet." %}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

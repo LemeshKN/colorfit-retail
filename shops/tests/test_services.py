@@ -6,7 +6,7 @@ import pytest
 from catalog.services import InvalidCardError, resolve_card
 from catalog.tests.factories import CardCodeFactory, GarmentTypeFactory
 from shops.models import AdviceSession
-from shops.services import record_session, set_session_garment, unique_visits_report
+from shops.services import record_session, set_session_garment, unique_visits_report, get_active_shop, list_active_shops
 
 from .factories import AdviceSessionFactory, ShopFactory
 
@@ -107,3 +107,16 @@ def test_report_for_empty_range_is_zero():
     assert report["total_entries"] == 0
     assert report["unique_devices"] == 0
     assert report["days"] == []
+
+def test_get_active_shop_ignores_case_and_inactive_shops():
+    shop = ShopFactory(slug="sh-014")
+    ShopFactory(slug="sh-015", is_active=False)
+    assert get_active_shop("SH-014") == shop
+    assert get_active_shop("sh-015") is None
+    assert get_active_shop("nope") is None
+
+
+def test_list_active_shops_hides_inactive_shops():
+    live = ShopFactory()
+    ShopFactory(is_active=False)
+    assert list(list_active_shops()) == [live]

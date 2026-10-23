@@ -1,0 +1,10 @@
+{% extends "advisor/base.html" %}{% load i18n %}
+{% block title %}{% trans "Choose a garment" %}{% endblock %}
+{% block content %}
+<h1 class="mb-4 text-2xl font-bold">{% trans "What are you looking for?" %}</h1>
+<div class="space-y-3">
+  {% for garment in garments %}
+  <a class="btn btn-lg w-full" href="{% url 'advisor:colors' shop_slug=shop.slug garment_slug=garment.slug %}">{{ garment.name }}</a>
+  {% endfor %}
+</div>
+{% endblock %}
