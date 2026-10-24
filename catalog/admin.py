@@ -1,8 +1,5 @@
-from django.contrib import admin
-from django.utils.html import format_html
 from django.contrib import admin, messages
-
-from .services import check_catalog_health
+from django.utils.html import format_html
 
 from .models import (
     BottomColor,
@@ -15,6 +12,7 @@ from .models import (
     ShadeRecommendation,
     SkinTone,
 )
+from .services import check_catalog_health
 
 
 def swatch(hex_value):

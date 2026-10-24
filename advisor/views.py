@@ -21,6 +21,7 @@ from shops.services import get_active_shop, list_active_shops
 
 from .forms import CardEntryForm
 from .services import attach_garment, get_remembered_card, remember_card, start_visit
+
 SESSION_SECONDS = 2 * 60 * 60
 
 

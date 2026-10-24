@@ -2,15 +2,15 @@ import re
 from dataclasses import dataclass, field
 
 from django.db.models import Case, Count, IntegerField, OuterRef, Subquery, Value, When
-from .models import Shade 
 from django.utils.translation import gettext_lazy
 
 from .models import (
     BottomType,
     CardCode,
-    GarmentType,
     ColorFamily,
+    GarmentType,
     OutfitPairing,
+    Shade,
     ShadeRecommendation,
     SkinTone,
 )

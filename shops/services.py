@@ -3,7 +3,7 @@ from django.utils import timezone
 
 from catalog.services import InvalidCardError
 
-from .models import AdviceSession, Shop 
+from .models import AdviceSession, Shop
 
 
 def record_session(shop, card, device_id, garment=None):

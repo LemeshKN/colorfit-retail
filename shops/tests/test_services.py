@@ -6,7 +6,13 @@ import pytest
 from catalog.services import InvalidCardError, resolve_card
 from catalog.tests.factories import CardCodeFactory, GarmentTypeFactory
 from shops.models import AdviceSession
-from shops.services import record_session, set_session_garment, unique_visits_report, get_active_shop, list_active_shops
+from shops.services import (
+    get_active_shop,
+    list_active_shops,
+    record_session,
+    set_session_garment,
+    unique_visits_report,
+)
 
 from .factories import AdviceSessionFactory, ShopFactory
 

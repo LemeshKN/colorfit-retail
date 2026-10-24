@@ -50,8 +50,8 @@ def world():
 
 
 def _enter_card(client, text="st7"):
-    return client.post(reverse("advisor:card_entry", kwargs={"shop_slug": "sh-014"}), {"card_id": text})
-
+    url = reverse("advisor:card_entry", kwargs={"shop_slug": "sh-014"})
+    return client.post(url, {"card_id": text})
 
 def _shades_url(world, garment):
     return reverse(
