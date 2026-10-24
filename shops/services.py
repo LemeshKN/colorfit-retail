@@ -66,3 +66,7 @@ def list_active_shops():
 def get_active_shop(slug):
     """Case does not matter: 'SH-014' and 'sh-014' find the same shop."""
     return Shop.objects.filter(slug=(slug or "").lower(), is_active=True).first()
+
+def get_advice_session(pk, shop):
+    """Return the AdviceSession with this id for this shop, or None."""
+    return AdviceSession.objects.filter(pk=pk, shop=shop).first()

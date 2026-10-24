@@ -1,11 +1,11 @@
 {% extends "advisor/base.html" %}{% load i18n %}
 {% block title %}{{ garment.name }}{% endblock %}
 {% block content %}
-<a class="link" href="{% url 'advisor:garments' shop_slug=shop.slug %}">&larr; {% trans "Garments" %}</a>
+<a class="btn btn-outline btn-sm" href="{% url 'advisor:garments' shop_slug=shop.slug %}">&larr; {% trans "Garments" %}</a>
 <h1 class="my-3 text-2xl font-bold">{{ garment.name }}: {% trans "pick a color family" %}</h1>
 <div class="grid grid-cols-2 gap-3">
   {% for family in families %}
-  <a class="card border border-base-300 bg-base-100 p-3" href="{% url 'advisor:shades' shop_slug=shop.slug garment_slug=garment.slug family_slug=family.slug %}">
+  <a class="card border-2 border-base-content/40 bg-base-100 p-3" href="{% url 'advisor:shades' shop_slug=shop.slug garment_slug=garment.slug family_slug=family.slug %}">
     <div class="h-14 w-full rounded" style="background-color: {{ family.sample_hex|default:'#cccccc' }}"></div>
     <span class="mt-2 text-lg font-semibold">{{ family.name }}</span>
   </a>

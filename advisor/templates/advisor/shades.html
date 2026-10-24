@@ -1,11 +1,11 @@
 {% extends "advisor/base.html" %}{% load i18n %}
 {% block title %}{{ family.name }}{% endblock %}
 {% block content %}
-<a class="link" href="{% url 'advisor:colors' shop_slug=shop.slug garment_slug=garment.slug %}">&larr; {% trans "Color families" %}</a>
+<a class="btn btn-outline btn-sm" href="{% url 'advisor:colors' shop_slug=shop.slug garment_slug=garment.slug %}">&larr; {% trans "Color families" %}</a>
 <h1 class="my-3 text-2xl font-bold">{{ garment.name }}: {{ family.name }}</h1>
 <ul class="space-y-3">
   {% for rec in recommendations %}
-  <li class="card border border-base-300 p-3">
+  <li class="card border-2 border-base-content/40 p-3">
     <div class="flex items-center gap-3">
       <div class="h-16 w-16 shrink-0 rounded" style="background-color: {{ rec.shade.hex }}"></div>
       <div>

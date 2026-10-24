@@ -3,6 +3,7 @@ from dataclasses import dataclass, field
 
 from django.db.models import Case, Count, IntegerField, OuterRef, Subquery, Value, When
 from .models import Shade 
+from django.utils.translation import gettext_lazy
 
 from .models import (
     BottomType,
@@ -169,3 +170,15 @@ def get_shade(shade_id):
 
 def get_bottom_type(slug):
     return BottomType.objects.filter(slug=slug).first()
+
+
+CUSTOMER_LABELS = {
+    "best": gettext_lazy("Best for you"),
+    "good": gettext_lazy("Good option"),
+}
+
+
+def customer_label(status):
+    """Return the customer wording for a status, or None for hidden statuses."""
+    label = CUSTOMER_LABELS.get(status)
+    return str(label) if label else None

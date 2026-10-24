@@ -1,7 +1,7 @@
 {% extends "advisor/base.html" %}{% load i18n %}
 {% block title %}{{ shade.name }}{% endblock %}
 {% block content %}
-<a class="link" href="{% url 'advisor:shades' shop_slug=shop.slug garment_slug=garment.slug family_slug=shade.family.slug %}">&larr; {{ shade.family.name }}</a>
+<a class="btn btn-outline btn-sm" href="{% url 'advisor:shades' shop_slug=shop.slug garment_slug=garment.slug family_slug=shade.family.slug %}">&larr; {{ shade.family.name }}</a>
 <div class="my-3 flex items-center gap-3">
   <div class="h-14 w-14 shrink-0 rounded" style="background-color: {{ shade.hex }}"></div>
   <h1 class="text-2xl font-bold">{{ shade.name }}</h1>

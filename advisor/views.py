@@ -20,8 +20,7 @@ from catalog.services import (
 from shops.services import get_active_shop, list_active_shops
 
 from .forms import CardEntryForm
-from .services import get_remembered_card, remember_card
-
+from .services import attach_garment, get_remembered_card, remember_card, start_visit
 SESSION_SECONDS = 2 * 60 * 60
 
 
@@ -33,6 +32,7 @@ def shop_flow(view):
         shop = get_active_shop(shop_slug)
         if shop is None:
             raise Http404
+        
         card = get_remembered_card(request.session, shop)
         if card is None:
             return redirect("advisor:card_entry", shop_slug=shop.slug)
@@ -61,9 +61,9 @@ def card_entry(request, shop_slug):
                     _("We could not find this card ID. Check the card and try again."),
                 )
             else:
-                remember_card(request.session, shop, card)
+                remember_card(request.session, shop, card) 
                 request.session.set_expiry(SESSION_SECONDS)
-                # Level 4 adds record_session(...) here.
+                start_visit(request.session, shop, card, request.device_id)
                 return redirect("advisor:garments", shop_slug=shop.slug)
     else:
         form = CardEntryForm()
@@ -85,6 +85,7 @@ def colors(request, shop, card, garment_slug):
     garment = get_garment(garment_slug)
     if garment is None:
         raise Http404
+    attach_garment(request.session, shop, garment)
     return render(
         request,
         "advisor/colors.html",

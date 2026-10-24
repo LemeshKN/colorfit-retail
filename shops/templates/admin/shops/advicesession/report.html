@@ -1,0 +1,32 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<form method="get">
+  {{ form.as_p }}
+  <input type="submit" value="Show report">
+</form>
+
+{% if report %}
+  <h2>Summary</h2>
+  <p>Total entries: <strong>{{ report.total_entries }}</strong></p>
+  <p>Unique devices: <strong>{{ report.unique_devices }}</strong></p>
+  <p>Counted visits (one per device per day): <strong>{{ report.counted_visits }}</strong></p>
+
+  <h2>By day</h2>
+  <table>
+    <thead>
+      <tr><th>Date</th><th>Entries</th><th>Unique devices</th><th>Repeats</th></tr>
+    </thead>
+    <tbody>
+      {% for day in report.days %}
+      <tr>
+        <td>{{ day.date }}</td>
+        <td>{{ day.entries }}</td>
+        <td>{{ day.unique_devices }}</td>
+        <td>{{ day.repeats }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+{% endblock %}
