@@ -6,8 +6,12 @@
 <ul class="space-y-3">
   {% for shop in shops %}
   <li>
-    <a class="btn btn-outline btn-lg w-full justify-between" href="{% url 'advisor:card_entry' shop_slug=shop.slug %}">
-      <span>{{ shop.name }}</span><span class="text-sm font-normal">{{ shop.city }}</span>
+    <a class="card flex-row items-center justify-between gap-3 border-2 border-base-content/40 bg-base-100 p-3" href="{% url 'advisor:card_entry' shop_slug=shop.slug %}">
+      <span class="block min-w-0">
+        <span class="block break-words text-lg font-semibold">{{ shop.name }}</span>
+        <span class="block text-sm">{{ shop.city }}</span>
+      </span>
+      <span class="text-2xl font-bold" aria-hidden="true">&rarr;</span>
     </a>
   </li>
   {% empty %}

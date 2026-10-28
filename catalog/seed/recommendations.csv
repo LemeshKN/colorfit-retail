@@ -1,801 +1,801 @@
 tone,family,shade,status
-Tone 1,Red,Brick Red,usually_avoid
+Tone 1,Red,Brick Red,best
 Tone 1,Red,Cherry,best
-Tone 1,Red,Chilli,best
-Tone 1,Red,Coral Red,good
+Tone 1,Red,Chilli,good
+Tone 1,Red,Coral Red,try_carefully
 Tone 1,Red,Crimson,good
 Tone 1,Red,Rose Red,good
-Tone 1,Red,Scarlet,try_carefully
+Tone 1,Red,Scarlet,best
 Tone 1,Red,Tomato,usually_avoid
-Tone 1,Maroon,Burgundy,usually_avoid
-Tone 1,Maroon,Classic Maroon,usually_avoid
-Tone 1,Maroon,Cranberry,best
-Tone 1,Maroon,Mulberry,best
-Tone 1,Maroon,Oxblood,good
-Tone 1,Maroon,Raspberry,good
-Tone 1,Maroon,Rosewood,good
-Tone 1,Maroon,Wine,try_carefully
-Tone 1,Pink,Baby Pink,try_carefully
-Tone 1,Pink,Blush,usually_avoid
-Tone 1,Pink,Deep Magenta,usually_avoid
+Tone 1,Maroon,Burgundy,good
+Tone 1,Maroon,Classic Maroon,try_carefully
+Tone 1,Maroon,Cranberry,good
+Tone 1,Maroon,Mulberry,try_carefully
+Tone 1,Maroon,Oxblood,usually_avoid
+Tone 1,Maroon,Raspberry,try_carefully
+Tone 1,Maroon,Rosewood,usually_avoid
+Tone 1,Maroon,Wine,best
+Tone 1,Pink,Baby Pink,best
+Tone 1,Pink,Blush,good
+Tone 1,Pink,Deep Magenta,good
 Tone 1,Pink,Dusty Pink,best
-Tone 1,Pink,Fuchsia,best
-Tone 1,Pink,Hot Pink,good
+Tone 1,Pink,Fuchsia,good
+Tone 1,Pink,Hot Pink,best
 Tone 1,Pink,Rose,good
 Tone 1,Pink,Salmon Pink,good
-Tone 1,Orange,Apricot,good
-Tone 1,Orange,Burnt Orange,try_carefully
-Tone 1,Orange,Dark Rust,usually_avoid
-Tone 1,Orange,Marigold,usually_avoid
-Tone 1,Orange,Peach,best
-Tone 1,Orange,Rust,best
-Tone 1,Orange,Saffron,good
-Tone 1,Orange,Terracotta,good
-Tone 1,Yellow,Butter,good
-Tone 1,Yellow,Canary,good
-Tone 1,Yellow,Golden,try_carefully
-Tone 1,Yellow,Honey,usually_avoid
-Tone 1,Yellow,Lemon,usually_avoid
-Tone 1,Yellow,Mustard,best
-Tone 1,Yellow,Ochre,best
-Tone 1,Yellow,Sunflower,good
+Tone 1,Orange,Apricot,best
+Tone 1,Orange,Burnt Orange,good
+Tone 1,Orange,Dark Rust,best
+Tone 1,Orange,Marigold,best
+Tone 1,Orange,Peach,good
+Tone 1,Orange,Rust,usually_avoid
+Tone 1,Orange,Saffron,try_carefully
+Tone 1,Orange,Terracotta,try_carefully
+Tone 1,Yellow,Butter,usually_avoid
+Tone 1,Yellow,Canary,best
+Tone 1,Yellow,Golden,good
+Tone 1,Yellow,Honey,try_carefully
+Tone 1,Yellow,Lemon,try_carefully
+Tone 1,Yellow,Mustard,good
+Tone 1,Yellow,Ochre,good
+Tone 1,Yellow,Sunflower,usually_avoid
 Tone 1,Green,Bottle Green,good
-Tone 1,Green,Emerald,good
+Tone 1,Green,Emerald,usually_avoid
 Tone 1,Green,Mint,good
 Tone 1,Green,Olive,try_carefully
 Tone 1,Green,Pista,usually_avoid
-Tone 1,Green,Sage,usually_avoid
+Tone 1,Green,Sage,try_carefully
 Tone 1,Green,Sea Green,best
-Tone 1,Green,Teal,best
+Tone 1,Green,Teal,try_carefully
 Tone 1,Blue,Cerulean,best
 Tone 1,Blue,Denim,good
-Tone 1,Blue,Indigo,good
-Tone 1,Blue,Navy,good
-Tone 1,Blue,Peacock Blue,try_carefully
-Tone 1,Blue,Powder Blue,usually_avoid
-Tone 1,Blue,Royal Blue,usually_avoid
+Tone 1,Blue,Indigo,try_carefully
+Tone 1,Blue,Navy,usually_avoid
+Tone 1,Blue,Peacock Blue,usually_avoid
+Tone 1,Blue,Powder Blue,try_carefully
+Tone 1,Blue,Royal Blue,good
 Tone 1,Blue,Sky Blue,best
-Tone 1,Purple,Aubergine,best
-Tone 1,Purple,Lavender,best
-Tone 1,Purple,Lilac,good
-Tone 1,Purple,Mauve,good
-Tone 1,Purple,Orchid,good
+Tone 1,Purple,Aubergine,good
+Tone 1,Purple,Lavender,try_carefully
+Tone 1,Purple,Lilac,best
+Tone 1,Purple,Mauve,usually_avoid
+Tone 1,Purple,Orchid,best
 Tone 1,Purple,Plum,try_carefully
-Tone 1,Purple,Royal Purple,usually_avoid
+Tone 1,Purple,Royal Purple,best
 Tone 1,Purple,Violet,usually_avoid
-Tone 1,Brown,Camel,usually_avoid
-Tone 1,Brown,Caramel,best
+Tone 1,Brown,Camel,best
+Tone 1,Brown,Caramel,usually_avoid
 Tone 1,Brown,Chocolate,best
 Tone 1,Brown,Cocoa,good
 Tone 1,Brown,Coffee,good
-Tone 1,Brown,Fawn,good
-Tone 1,Brown,Mocha,try_carefully
-Tone 1,Brown,Tan,usually_avoid
-Tone 1,Neutrals,Beige,usually_avoid
-Tone 1,Neutrals,Charcoal,usually_avoid
-Tone 1,Neutrals,Cream,best
-Tone 1,Neutrals,Jet Black,best
-Tone 1,Neutrals,Light Grey,good
-Tone 1,Neutrals,Off White,good
+Tone 1,Brown,Fawn,best
+Tone 1,Brown,Mocha,good
+Tone 1,Brown,Tan,try_carefully
+Tone 1,Neutrals,Beige,best
+Tone 1,Neutrals,Charcoal,good
+Tone 1,Neutrals,Cream,good
+Tone 1,Neutrals,Jet Black,good
+Tone 1,Neutrals,Light Grey,usually_avoid
+Tone 1,Neutrals,Off White,try_carefully
 Tone 1,Neutrals,Sand,good
-Tone 1,Neutrals,Steel Grey,try_carefully
-Tone 2,Red,Brick Red,usually_avoid
-Tone 2,Red,Cherry,usually_avoid
+Tone 1,Neutrals,Steel Grey,good
+Tone 2,Red,Brick Red,try_carefully
+Tone 2,Red,Cherry,good
 Tone 2,Red,Chilli,best
-Tone 2,Red,Coral Red,best
+Tone 2,Red,Coral Red,try_carefully
 Tone 2,Red,Crimson,good
-Tone 2,Red,Rose Red,good
-Tone 2,Red,Scarlet,good
+Tone 2,Red,Rose Red,usually_avoid
+Tone 2,Red,Scarlet,usually_avoid
 Tone 2,Red,Tomato,try_carefully
-Tone 2,Maroon,Burgundy,try_carefully
-Tone 2,Maroon,Classic Maroon,usually_avoid
-Tone 2,Maroon,Cranberry,usually_avoid
-Tone 2,Maroon,Mulberry,best
-Tone 2,Maroon,Oxblood,best
+Tone 2,Maroon,Burgundy,best
+Tone 2,Maroon,Classic Maroon,try_carefully
+Tone 2,Maroon,Cranberry,try_carefully
+Tone 2,Maroon,Mulberry,good
+Tone 2,Maroon,Oxblood,try_carefully
 Tone 2,Maroon,Raspberry,good
-Tone 2,Maroon,Rosewood,good
-Tone 2,Maroon,Wine,good
+Tone 2,Maroon,Rosewood,usually_avoid
+Tone 2,Maroon,Wine,usually_avoid
 Tone 2,Pink,Baby Pink,good
-Tone 2,Pink,Blush,try_carefully
-Tone 2,Pink,Deep Magenta,usually_avoid
-Tone 2,Pink,Dusty Pink,usually_avoid
-Tone 2,Pink,Fuchsia,best
+Tone 2,Pink,Blush,best
+Tone 2,Pink,Deep Magenta,good
+Tone 2,Pink,Dusty Pink,best
+Tone 2,Pink,Fuchsia,try_carefully
 Tone 2,Pink,Hot Pink,best
-Tone 2,Pink,Rose,good
+Tone 2,Pink,Rose,best
 Tone 2,Pink,Salmon Pink,good
-Tone 2,Orange,Apricot,good
+Tone 2,Orange,Apricot,try_carefully
 Tone 2,Orange,Burnt Orange,good
-Tone 2,Orange,Dark Rust,try_carefully
-Tone 2,Orange,Marigold,usually_avoid
-Tone 2,Orange,Peach,usually_avoid
-Tone 2,Orange,Rust,best
-Tone 2,Orange,Saffron,best
-Tone 2,Orange,Terracotta,good
-Tone 2,Yellow,Butter,good
-Tone 2,Yellow,Canary,good
-Tone 2,Yellow,Golden,good
-Tone 2,Yellow,Honey,try_carefully
-Tone 2,Yellow,Lemon,usually_avoid
-Tone 2,Yellow,Mustard,usually_avoid
+Tone 2,Orange,Dark Rust,good
+Tone 2,Orange,Marigold,best
+Tone 2,Orange,Peach,try_carefully
+Tone 2,Orange,Rust,good
+Tone 2,Orange,Saffron,good
+Tone 2,Orange,Terracotta,usually_avoid
+Tone 2,Yellow,Butter,best
+Tone 2,Yellow,Canary,usually_avoid
+Tone 2,Yellow,Golden,usually_avoid
+Tone 2,Yellow,Honey,best
+Tone 2,Yellow,Lemon,try_carefully
+Tone 2,Yellow,Mustard,try_carefully
 Tone 2,Yellow,Ochre,best
-Tone 2,Yellow,Sunflower,best
-Tone 2,Green,Bottle Green,best
+Tone 2,Yellow,Sunflower,good
+Tone 2,Green,Bottle Green,good
 Tone 2,Green,Emerald,good
 Tone 2,Green,Mint,good
-Tone 2,Green,Olive,good
-Tone 2,Green,Pista,try_carefully
-Tone 2,Green,Sage,usually_avoid
-Tone 2,Green,Sea Green,usually_avoid
+Tone 2,Green,Olive,best
+Tone 2,Green,Pista,good
+Tone 2,Green,Sage,best
+Tone 2,Green,Sea Green,good
 Tone 2,Green,Teal,best
-Tone 2,Blue,Cerulean,best
-Tone 2,Blue,Denim,best
-Tone 2,Blue,Indigo,good
-Tone 2,Blue,Navy,good
+Tone 2,Blue,Cerulean,try_carefully
+Tone 2,Blue,Denim,good
+Tone 2,Blue,Indigo,best
+Tone 2,Blue,Navy,try_carefully
 Tone 2,Blue,Peacock Blue,good
-Tone 2,Blue,Powder Blue,try_carefully
-Tone 2,Blue,Royal Blue,usually_avoid
+Tone 2,Blue,Powder Blue,usually_avoid
+Tone 2,Blue,Royal Blue,good
 Tone 2,Blue,Sky Blue,usually_avoid
-Tone 2,Purple,Aubergine,usually_avoid
-Tone 2,Purple,Lavender,best
-Tone 2,Purple,Lilac,best
-Tone 2,Purple,Mauve,good
-Tone 2,Purple,Orchid,good
-Tone 2,Purple,Plum,good
-Tone 2,Purple,Royal Purple,try_carefully
-Tone 2,Purple,Violet,usually_avoid
-Tone 2,Brown,Camel,usually_avoid
-Tone 2,Brown,Caramel,usually_avoid
-Tone 2,Brown,Chocolate,best
+Tone 2,Purple,Aubergine,best
+Tone 2,Purple,Lavender,good
+Tone 2,Purple,Lilac,usually_avoid
+Tone 2,Purple,Mauve,try_carefully
+Tone 2,Purple,Orchid,best
+Tone 2,Purple,Plum,try_carefully
+Tone 2,Purple,Royal Purple,good
+Tone 2,Purple,Violet,best
+Tone 2,Brown,Camel,best
+Tone 2,Brown,Caramel,good
+Tone 2,Brown,Chocolate,good
 Tone 2,Brown,Cocoa,best
 Tone 2,Brown,Coffee,good
-Tone 2,Brown,Fawn,good
+Tone 2,Brown,Fawn,best
 Tone 2,Brown,Mocha,good
 Tone 2,Brown,Tan,try_carefully
-Tone 2,Neutrals,Beige,try_carefully
-Tone 2,Neutrals,Charcoal,usually_avoid
-Tone 2,Neutrals,Cream,usually_avoid
-Tone 2,Neutrals,Jet Black,best
-Tone 2,Neutrals,Light Grey,best
-Tone 2,Neutrals,Off White,good
+Tone 2,Neutrals,Beige,good
+Tone 2,Neutrals,Charcoal,best
+Tone 2,Neutrals,Cream,good
+Tone 2,Neutrals,Jet Black,good
+Tone 2,Neutrals,Light Grey,try_carefully
+Tone 2,Neutrals,Off White,best
 Tone 2,Neutrals,Sand,good
 Tone 2,Neutrals,Steel Grey,good
-Tone 3,Red,Brick Red,try_carefully
-Tone 3,Red,Cherry,usually_avoid
-Tone 3,Red,Chilli,usually_avoid
-Tone 3,Red,Coral Red,best
-Tone 3,Red,Crimson,best
+Tone 3,Red,Brick Red,best
+Tone 3,Red,Cherry,good
+Tone 3,Red,Chilli,good
+Tone 3,Red,Coral Red,good
+Tone 3,Red,Crimson,good
 Tone 3,Red,Rose Red,good
 Tone 3,Red,Scarlet,good
 Tone 3,Red,Tomato,good
 Tone 3,Maroon,Burgundy,good
-Tone 3,Maroon,Classic Maroon,try_carefully
-Tone 3,Maroon,Cranberry,usually_avoid
-Tone 3,Maroon,Mulberry,usually_avoid
-Tone 3,Maroon,Oxblood,best
-Tone 3,Maroon,Raspberry,best
+Tone 3,Maroon,Classic Maroon,good
+Tone 3,Maroon,Cranberry,best
+Tone 3,Maroon,Mulberry,good
+Tone 3,Maroon,Oxblood,try_carefully
+Tone 3,Maroon,Raspberry,good
 Tone 3,Maroon,Rosewood,good
-Tone 3,Maroon,Wine,good
-Tone 3,Pink,Baby Pink,good
-Tone 3,Pink,Blush,good
-Tone 3,Pink,Deep Magenta,try_carefully
-Tone 3,Pink,Dusty Pink,usually_avoid
-Tone 3,Pink,Fuchsia,usually_avoid
-Tone 3,Pink,Hot Pink,best
-Tone 3,Pink,Rose,best
+Tone 3,Maroon,Wine,best
+Tone 3,Pink,Baby Pink,best
+Tone 3,Pink,Blush,try_carefully
+Tone 3,Pink,Deep Magenta,good
+Tone 3,Pink,Dusty Pink,best
+Tone 3,Pink,Fuchsia,best
+Tone 3,Pink,Hot Pink,good
+Tone 3,Pink,Rose,good
 Tone 3,Pink,Salmon Pink,good
-Tone 3,Orange,Apricot,good
-Tone 3,Orange,Burnt Orange,good
+Tone 3,Orange,Apricot,usually_avoid
+Tone 3,Orange,Burnt Orange,usually_avoid
 Tone 3,Orange,Dark Rust,good
-Tone 3,Orange,Marigold,try_carefully
-Tone 3,Orange,Peach,usually_avoid
-Tone 3,Orange,Rust,usually_avoid
-Tone 3,Orange,Saffron,best
+Tone 3,Orange,Marigold,best
+Tone 3,Orange,Peach,best
+Tone 3,Orange,Rust,try_carefully
+Tone 3,Orange,Saffron,try_carefully
 Tone 3,Orange,Terracotta,best
-Tone 3,Yellow,Butter,best
-Tone 3,Yellow,Canary,good
-Tone 3,Yellow,Golden,good
+Tone 3,Yellow,Butter,try_carefully
+Tone 3,Yellow,Canary,best
+Tone 3,Yellow,Golden,best
 Tone 3,Yellow,Honey,good
 Tone 3,Yellow,Lemon,try_carefully
-Tone 3,Yellow,Mustard,usually_avoid
+Tone 3,Yellow,Mustard,good
 Tone 3,Yellow,Ochre,usually_avoid
-Tone 3,Yellow,Sunflower,best
-Tone 3,Green,Bottle Green,best
+Tone 3,Yellow,Sunflower,usually_avoid
+Tone 3,Green,Bottle Green,usually_avoid
 Tone 3,Green,Emerald,best
-Tone 3,Green,Mint,good
-Tone 3,Green,Olive,good
+Tone 3,Green,Mint,best
+Tone 3,Green,Olive,try_carefully
 Tone 3,Green,Pista,good
-Tone 3,Green,Sage,try_carefully
-Tone 3,Green,Sea Green,usually_avoid
-Tone 3,Green,Teal,usually_avoid
-Tone 3,Blue,Cerulean,usually_avoid
-Tone 3,Blue,Denim,best
-Tone 3,Blue,Indigo,best
-Tone 3,Blue,Navy,good
-Tone 3,Blue,Peacock Blue,good
-Tone 3,Blue,Powder Blue,good
-Tone 3,Blue,Royal Blue,try_carefully
-Tone 3,Blue,Sky Blue,usually_avoid
-Tone 3,Purple,Aubergine,usually_avoid
+Tone 3,Green,Sage,best
+Tone 3,Green,Sea Green,good
+Tone 3,Green,Teal,best
+Tone 3,Blue,Cerulean,good
+Tone 3,Blue,Denim,good
+Tone 3,Blue,Indigo,good
+Tone 3,Blue,Navy,best
+Tone 3,Blue,Peacock Blue,best
+Tone 3,Blue,Powder Blue,best
+Tone 3,Blue,Royal Blue,good
+Tone 3,Blue,Sky Blue,good
+Tone 3,Purple,Aubergine,good
 Tone 3,Purple,Lavender,usually_avoid
-Tone 3,Purple,Lilac,best
-Tone 3,Purple,Mauve,best
-Tone 3,Purple,Orchid,good
+Tone 3,Purple,Lilac,good
+Tone 3,Purple,Mauve,good
+Tone 3,Purple,Orchid,try_carefully
 Tone 3,Purple,Plum,good
 Tone 3,Purple,Royal Purple,good
-Tone 3,Purple,Violet,try_carefully
-Tone 3,Brown,Camel,try_carefully
-Tone 3,Brown,Caramel,usually_avoid
-Tone 3,Brown,Chocolate,usually_avoid
+Tone 3,Purple,Violet,best
+Tone 3,Brown,Camel,good
+Tone 3,Brown,Caramel,try_carefully
+Tone 3,Brown,Chocolate,good
 Tone 3,Brown,Cocoa,best
-Tone 3,Brown,Coffee,best
-Tone 3,Brown,Fawn,good
+Tone 3,Brown,Coffee,good
+Tone 3,Brown,Fawn,usually_avoid
 Tone 3,Brown,Mocha,good
 Tone 3,Brown,Tan,good
 Tone 3,Neutrals,Beige,good
-Tone 3,Neutrals,Charcoal,try_carefully
-Tone 3,Neutrals,Cream,usually_avoid
-Tone 3,Neutrals,Jet Black,usually_avoid
-Tone 3,Neutrals,Light Grey,best
-Tone 3,Neutrals,Off White,best
+Tone 3,Neutrals,Charcoal,good
+Tone 3,Neutrals,Cream,try_carefully
+Tone 3,Neutrals,Jet Black,try_carefully
+Tone 3,Neutrals,Light Grey,usually_avoid
+Tone 3,Neutrals,Off White,good
 Tone 3,Neutrals,Sand,good
-Tone 3,Neutrals,Steel Grey,good
+Tone 3,Neutrals,Steel Grey,best
 Tone 4,Red,Brick Red,good
-Tone 4,Red,Cherry,try_carefully
-Tone 4,Red,Chilli,usually_avoid
-Tone 4,Red,Coral Red,usually_avoid
+Tone 4,Red,Cherry,good
+Tone 4,Red,Chilli,try_carefully
+Tone 4,Red,Coral Red,best
 Tone 4,Red,Crimson,best
 Tone 4,Red,Rose Red,best
-Tone 4,Red,Scarlet,good
-Tone 4,Red,Tomato,good
-Tone 4,Maroon,Burgundy,good
-Tone 4,Maroon,Classic Maroon,good
-Tone 4,Maroon,Cranberry,try_carefully
-Tone 4,Maroon,Mulberry,usually_avoid
-Tone 4,Maroon,Oxblood,usually_avoid
+Tone 4,Red,Scarlet,try_carefully
+Tone 4,Red,Tomato,usually_avoid
+Tone 4,Maroon,Burgundy,best
+Tone 4,Maroon,Classic Maroon,best
+Tone 4,Maroon,Cranberry,good
+Tone 4,Maroon,Mulberry,good
+Tone 4,Maroon,Oxblood,good
 Tone 4,Maroon,Raspberry,best
-Tone 4,Maroon,Rosewood,best
+Tone 4,Maroon,Rosewood,good
 Tone 4,Maroon,Wine,good
-Tone 4,Pink,Baby Pink,good
-Tone 4,Pink,Blush,good
-Tone 4,Pink,Deep Magenta,good
-Tone 4,Pink,Dusty Pink,try_carefully
-Tone 4,Pink,Fuchsia,usually_avoid
+Tone 4,Pink,Baby Pink,best
+Tone 4,Pink,Blush,try_carefully
+Tone 4,Pink,Deep Magenta,try_carefully
+Tone 4,Pink,Dusty Pink,usually_avoid
+Tone 4,Pink,Fuchsia,best
 Tone 4,Pink,Hot Pink,usually_avoid
-Tone 4,Pink,Rose,best
-Tone 4,Pink,Salmon Pink,best
-Tone 4,Orange,Apricot,best
-Tone 4,Orange,Burnt Orange,good
+Tone 4,Pink,Rose,try_carefully
+Tone 4,Pink,Salmon Pink,good
+Tone 4,Orange,Apricot,usually_avoid
+Tone 4,Orange,Burnt Orange,best
 Tone 4,Orange,Dark Rust,good
 Tone 4,Orange,Marigold,good
 Tone 4,Orange,Peach,try_carefully
-Tone 4,Orange,Rust,usually_avoid
-Tone 4,Orange,Saffron,usually_avoid
-Tone 4,Orange,Terracotta,best
+Tone 4,Orange,Rust,best
+Tone 4,Orange,Saffron,best
+Tone 4,Orange,Terracotta,good
 Tone 4,Yellow,Butter,best
 Tone 4,Yellow,Canary,best
-Tone 4,Yellow,Golden,good
+Tone 4,Yellow,Golden,try_carefully
 Tone 4,Yellow,Honey,good
-Tone 4,Yellow,Lemon,good
-Tone 4,Yellow,Mustard,try_carefully
-Tone 4,Yellow,Ochre,usually_avoid
-Tone 4,Yellow,Sunflower,usually_avoid
-Tone 4,Green,Bottle Green,usually_avoid
+Tone 4,Yellow,Lemon,best
+Tone 4,Yellow,Mustard,best
+Tone 4,Yellow,Ochre,good
+Tone 4,Yellow,Sunflower,good
+Tone 4,Green,Bottle Green,good
 Tone 4,Green,Emerald,best
-Tone 4,Green,Mint,best
+Tone 4,Green,Mint,good
 Tone 4,Green,Olive,good
 Tone 4,Green,Pista,good
 Tone 4,Green,Sage,good
-Tone 4,Green,Sea Green,try_carefully
-Tone 4,Green,Teal,usually_avoid
-Tone 4,Blue,Cerulean,usually_avoid
-Tone 4,Blue,Denim,usually_avoid
-Tone 4,Blue,Indigo,best
-Tone 4,Blue,Navy,best
-Tone 4,Blue,Peacock Blue,good
-Tone 4,Blue,Powder Blue,good
+Tone 4,Green,Sea Green,good
+Tone 4,Green,Teal,good
+Tone 4,Blue,Cerulean,good
+Tone 4,Blue,Denim,best
+Tone 4,Blue,Indigo,good
+Tone 4,Blue,Navy,try_carefully
+Tone 4,Blue,Peacock Blue,try_carefully
+Tone 4,Blue,Powder Blue,usually_avoid
 Tone 4,Blue,Royal Blue,good
-Tone 4,Blue,Sky Blue,try_carefully
-Tone 4,Purple,Aubergine,try_carefully
-Tone 4,Purple,Lavender,usually_avoid
-Tone 4,Purple,Lilac,usually_avoid
-Tone 4,Purple,Mauve,best
+Tone 4,Blue,Sky Blue,best
+Tone 4,Purple,Aubergine,good
+Tone 4,Purple,Lavender,good
+Tone 4,Purple,Lilac,good
+Tone 4,Purple,Mauve,good
 Tone 4,Purple,Orchid,best
 Tone 4,Purple,Plum,good
 Tone 4,Purple,Royal Purple,good
 Tone 4,Purple,Violet,good
 Tone 4,Brown,Camel,good
-Tone 4,Brown,Caramel,try_carefully
-Tone 4,Brown,Chocolate,usually_avoid
-Tone 4,Brown,Cocoa,usually_avoid
-Tone 4,Brown,Coffee,best
+Tone 4,Brown,Caramel,good
+Tone 4,Brown,Chocolate,good
+Tone 4,Brown,Cocoa,good
+Tone 4,Brown,Coffee,good
 Tone 4,Brown,Fawn,best
 Tone 4,Brown,Mocha,good
 Tone 4,Brown,Tan,good
-Tone 4,Neutrals,Beige,good
+Tone 4,Neutrals,Beige,best
 Tone 4,Neutrals,Charcoal,good
-Tone 4,Neutrals,Cream,try_carefully
-Tone 4,Neutrals,Jet Black,usually_avoid
-Tone 4,Neutrals,Light Grey,usually_avoid
-Tone 4,Neutrals,Off White,best
+Tone 4,Neutrals,Cream,good
+Tone 4,Neutrals,Jet Black,try_carefully
+Tone 4,Neutrals,Light Grey,best
+Tone 4,Neutrals,Off White,usually_avoid
 Tone 4,Neutrals,Sand,best
 Tone 4,Neutrals,Steel Grey,good
-Tone 5,Red,Brick Red,good
-Tone 5,Red,Cherry,good
-Tone 5,Red,Chilli,try_carefully
-Tone 5,Red,Coral Red,usually_avoid
-Tone 5,Red,Crimson,usually_avoid
-Tone 5,Red,Rose Red,best
-Tone 5,Red,Scarlet,best
+Tone 5,Red,Brick Red,usually_avoid
+Tone 5,Red,Cherry,try_carefully
+Tone 5,Red,Chilli,best
+Tone 5,Red,Coral Red,try_carefully
+Tone 5,Red,Crimson,try_carefully
+Tone 5,Red,Rose Red,usually_avoid
+Tone 5,Red,Scarlet,good
 Tone 5,Red,Tomato,good
-Tone 5,Maroon,Burgundy,good
-Tone 5,Maroon,Classic Maroon,good
-Tone 5,Maroon,Cranberry,good
-Tone 5,Maroon,Mulberry,try_carefully
-Tone 5,Maroon,Oxblood,usually_avoid
+Tone 5,Maroon,Burgundy,best
+Tone 5,Maroon,Classic Maroon,try_carefully
+Tone 5,Maroon,Cranberry,best
+Tone 5,Maroon,Mulberry,good
+Tone 5,Maroon,Oxblood,best
 Tone 5,Maroon,Raspberry,usually_avoid
 Tone 5,Maroon,Rosewood,best
-Tone 5,Maroon,Wine,best
-Tone 5,Pink,Baby Pink,best
-Tone 5,Pink,Blush,good
-Tone 5,Pink,Deep Magenta,good
-Tone 5,Pink,Dusty Pink,good
-Tone 5,Pink,Fuchsia,try_carefully
-Tone 5,Pink,Hot Pink,usually_avoid
-Tone 5,Pink,Rose,usually_avoid
-Tone 5,Pink,Salmon Pink,best
+Tone 5,Maroon,Wine,good
+Tone 5,Pink,Baby Pink,good
+Tone 5,Pink,Blush,try_carefully
+Tone 5,Pink,Deep Magenta,usually_avoid
+Tone 5,Pink,Dusty Pink,best
+Tone 5,Pink,Fuchsia,best
+Tone 5,Pink,Hot Pink,good
+Tone 5,Pink,Rose,try_carefully
+Tone 5,Pink,Salmon Pink,good
 Tone 5,Orange,Apricot,best
-Tone 5,Orange,Burnt Orange,best
-Tone 5,Orange,Dark Rust,good
+Tone 5,Orange,Burnt Orange,good
+Tone 5,Orange,Dark Rust,try_carefully
 Tone 5,Orange,Marigold,good
 Tone 5,Orange,Peach,good
-Tone 5,Orange,Rust,try_carefully
-Tone 5,Orange,Saffron,usually_avoid
-Tone 5,Orange,Terracotta,usually_avoid
-Tone 5,Yellow,Butter,usually_avoid
+Tone 5,Orange,Rust,good
+Tone 5,Orange,Saffron,best
+Tone 5,Orange,Terracotta,good
+Tone 5,Yellow,Butter,good
 Tone 5,Yellow,Canary,best
 Tone 5,Yellow,Golden,best
-Tone 5,Yellow,Honey,good
-Tone 5,Yellow,Lemon,good
+Tone 5,Yellow,Honey,best
+Tone 5,Yellow,Lemon,best
 Tone 5,Yellow,Mustard,good
-Tone 5,Yellow,Ochre,try_carefully
-Tone 5,Yellow,Sunflower,usually_avoid
-Tone 5,Green,Bottle Green,usually_avoid
-Tone 5,Green,Emerald,usually_avoid
-Tone 5,Green,Mint,best
+Tone 5,Yellow,Ochre,good
+Tone 5,Yellow,Sunflower,try_carefully
+Tone 5,Green,Bottle Green,good
+Tone 5,Green,Emerald,best
+Tone 5,Green,Mint,good
 Tone 5,Green,Olive,best
 Tone 5,Green,Pista,good
 Tone 5,Green,Sage,good
-Tone 5,Green,Sea Green,good
-Tone 5,Green,Teal,try_carefully
+Tone 5,Green,Sea Green,best
+Tone 5,Green,Teal,best
 Tone 5,Blue,Cerulean,try_carefully
-Tone 5,Blue,Denim,usually_avoid
-Tone 5,Blue,Indigo,usually_avoid
+Tone 5,Blue,Denim,best
+Tone 5,Blue,Indigo,try_carefully
 Tone 5,Blue,Navy,best
-Tone 5,Blue,Peacock Blue,best
+Tone 5,Blue,Peacock Blue,try_carefully
 Tone 5,Blue,Powder Blue,good
-Tone 5,Blue,Royal Blue,good
-Tone 5,Blue,Sky Blue,good
+Tone 5,Blue,Royal Blue,usually_avoid
+Tone 5,Blue,Sky Blue,usually_avoid
 Tone 5,Purple,Aubergine,good
-Tone 5,Purple,Lavender,try_carefully
+Tone 5,Purple,Lavender,best
 Tone 5,Purple,Lilac,usually_avoid
-Tone 5,Purple,Mauve,usually_avoid
-Tone 5,Purple,Orchid,best
-Tone 5,Purple,Plum,best
+Tone 5,Purple,Mauve,try_carefully
+Tone 5,Purple,Orchid,good
+Tone 5,Purple,Plum,usually_avoid
 Tone 5,Purple,Royal Purple,good
-Tone 5,Purple,Violet,good
+Tone 5,Purple,Violet,try_carefully
 Tone 5,Brown,Camel,good
 Tone 5,Brown,Caramel,good
-Tone 5,Brown,Chocolate,try_carefully
-Tone 5,Brown,Cocoa,usually_avoid
-Tone 5,Brown,Coffee,usually_avoid
-Tone 5,Brown,Fawn,best
-Tone 5,Brown,Mocha,best
-Tone 5,Brown,Tan,good
-Tone 5,Neutrals,Beige,good
+Tone 5,Brown,Chocolate,good
+Tone 5,Brown,Cocoa,good
+Tone 5,Brown,Coffee,try_carefully
+Tone 5,Brown,Fawn,good
+Tone 5,Brown,Mocha,good
+Tone 5,Brown,Tan,best
+Tone 5,Neutrals,Beige,try_carefully
 Tone 5,Neutrals,Charcoal,good
-Tone 5,Neutrals,Cream,good
-Tone 5,Neutrals,Jet Black,try_carefully
-Tone 5,Neutrals,Light Grey,usually_avoid
+Tone 5,Neutrals,Cream,try_carefully
+Tone 5,Neutrals,Jet Black,good
+Tone 5,Neutrals,Light Grey,good
 Tone 5,Neutrals,Off White,usually_avoid
 Tone 5,Neutrals,Sand,best
-Tone 5,Neutrals,Steel Grey,best
+Tone 5,Neutrals,Steel Grey,good
 Tone 6,Red,Brick Red,good
-Tone 6,Red,Cherry,good
-Tone 6,Red,Chilli,good
-Tone 6,Red,Coral Red,try_carefully
-Tone 6,Red,Crimson,usually_avoid
+Tone 6,Red,Cherry,best
+Tone 6,Red,Chilli,best
+Tone 6,Red,Coral Red,good
+Tone 6,Red,Crimson,best
 Tone 6,Red,Rose Red,usually_avoid
 Tone 6,Red,Scarlet,best
-Tone 6,Red,Tomato,best
-Tone 6,Maroon,Burgundy,best
-Tone 6,Maroon,Classic Maroon,good
+Tone 6,Red,Tomato,try_carefully
+Tone 6,Maroon,Burgundy,good
+Tone 6,Maroon,Classic Maroon,best
 Tone 6,Maroon,Cranberry,good
-Tone 6,Maroon,Mulberry,good
-Tone 6,Maroon,Oxblood,try_carefully
-Tone 6,Maroon,Raspberry,usually_avoid
-Tone 6,Maroon,Rosewood,usually_avoid
+Tone 6,Maroon,Mulberry,best
+Tone 6,Maroon,Oxblood,good
+Tone 6,Maroon,Raspberry,good
+Tone 6,Maroon,Rosewood,good
 Tone 6,Maroon,Wine,best
-Tone 6,Pink,Baby Pink,best
-Tone 6,Pink,Blush,best
+Tone 6,Pink,Baby Pink,try_carefully
+Tone 6,Pink,Blush,try_carefully
 Tone 6,Pink,Deep Magenta,good
-Tone 6,Pink,Dusty Pink,good
+Tone 6,Pink,Dusty Pink,best
 Tone 6,Pink,Fuchsia,good
 Tone 6,Pink,Hot Pink,try_carefully
 Tone 6,Pink,Rose,usually_avoid
 Tone 6,Pink,Salmon Pink,usually_avoid
-Tone 6,Orange,Apricot,usually_avoid
-Tone 6,Orange,Burnt Orange,best
-Tone 6,Orange,Dark Rust,best
-Tone 6,Orange,Marigold,good
-Tone 6,Orange,Peach,good
-Tone 6,Orange,Rust,good
-Tone 6,Orange,Saffron,try_carefully
-Tone 6,Orange,Terracotta,usually_avoid
+Tone 6,Orange,Apricot,try_carefully
+Tone 6,Orange,Burnt Orange,try_carefully
+Tone 6,Orange,Dark Rust,try_carefully
+Tone 6,Orange,Marigold,usually_avoid
+Tone 6,Orange,Peach,best
+Tone 6,Orange,Rust,usually_avoid
+Tone 6,Orange,Saffron,good
+Tone 6,Orange,Terracotta,good
 Tone 6,Yellow,Butter,usually_avoid
-Tone 6,Yellow,Canary,usually_avoid
-Tone 6,Yellow,Golden,best
-Tone 6,Yellow,Honey,best
-Tone 6,Yellow,Lemon,good
-Tone 6,Yellow,Mustard,good
-Tone 6,Yellow,Ochre,good
-Tone 6,Yellow,Sunflower,try_carefully
-Tone 6,Green,Bottle Green,try_carefully
-Tone 6,Green,Emerald,usually_avoid
-Tone 6,Green,Mint,usually_avoid
-Tone 6,Green,Olive,best
-Tone 6,Green,Pista,best
-Tone 6,Green,Sage,good
+Tone 6,Yellow,Canary,try_carefully
+Tone 6,Yellow,Golden,usually_avoid
+Tone 6,Yellow,Honey,good
+Tone 6,Yellow,Lemon,best
+Tone 6,Yellow,Mustard,try_carefully
+Tone 6,Yellow,Ochre,best
+Tone 6,Yellow,Sunflower,best
+Tone 6,Green,Bottle Green,good
+Tone 6,Green,Emerald,best
+Tone 6,Green,Mint,good
+Tone 6,Green,Olive,good
+Tone 6,Green,Pista,good
+Tone 6,Green,Sage,best
 Tone 6,Green,Sea Green,good
-Tone 6,Green,Teal,good
+Tone 6,Green,Teal,try_carefully
 Tone 6,Blue,Cerulean,good
-Tone 6,Blue,Denim,try_carefully
-Tone 6,Blue,Indigo,usually_avoid
-Tone 6,Blue,Navy,usually_avoid
+Tone 6,Blue,Denim,good
+Tone 6,Blue,Indigo,good
+Tone 6,Blue,Navy,best
 Tone 6,Blue,Peacock Blue,best
-Tone 6,Blue,Powder Blue,best
+Tone 6,Blue,Powder Blue,good
 Tone 6,Blue,Royal Blue,good
 Tone 6,Blue,Sky Blue,good
 Tone 6,Purple,Aubergine,good
 Tone 6,Purple,Lavender,good
 Tone 6,Purple,Lilac,try_carefully
-Tone 6,Purple,Mauve,usually_avoid
-Tone 6,Purple,Orchid,usually_avoid
-Tone 6,Purple,Plum,best
-Tone 6,Purple,Royal Purple,best
+Tone 6,Purple,Mauve,good
+Tone 6,Purple,Orchid,best
+Tone 6,Purple,Plum,good
+Tone 6,Purple,Royal Purple,good
 Tone 6,Purple,Violet,good
-Tone 6,Brown,Camel,good
-Tone 6,Brown,Caramel,good
-Tone 6,Brown,Chocolate,good
-Tone 6,Brown,Cocoa,try_carefully
-Tone 6,Brown,Coffee,usually_avoid
-Tone 6,Brown,Fawn,usually_avoid
-Tone 6,Brown,Mocha,best
-Tone 6,Brown,Tan,best
-Tone 6,Neutrals,Beige,best
-Tone 6,Neutrals,Charcoal,good
+Tone 6,Brown,Camel,try_carefully
+Tone 6,Brown,Caramel,best
+Tone 6,Brown,Chocolate,best
+Tone 6,Brown,Cocoa,good
+Tone 6,Brown,Coffee,try_carefully
+Tone 6,Brown,Fawn,good
+Tone 6,Brown,Mocha,usually_avoid
+Tone 6,Brown,Tan,usually_avoid
+Tone 6,Neutrals,Beige,usually_avoid
+Tone 6,Neutrals,Charcoal,try_carefully
 Tone 6,Neutrals,Cream,good
-Tone 6,Neutrals,Jet Black,good
+Tone 6,Neutrals,Jet Black,best
 Tone 6,Neutrals,Light Grey,try_carefully
-Tone 6,Neutrals,Off White,usually_avoid
-Tone 6,Neutrals,Sand,usually_avoid
-Tone 6,Neutrals,Steel Grey,best
-Tone 7,Red,Brick Red,best
-Tone 7,Red,Cherry,good
-Tone 7,Red,Chilli,good
-Tone 7,Red,Coral Red,good
+Tone 6,Neutrals,Off White,good
+Tone 6,Neutrals,Sand,try_carefully
+Tone 6,Neutrals,Steel Grey,usually_avoid
+Tone 7,Red,Brick Red,good
+Tone 7,Red,Cherry,usually_avoid
+Tone 7,Red,Chilli,usually_avoid
+Tone 7,Red,Coral Red,best
 Tone 7,Red,Crimson,try_carefully
-Tone 7,Red,Rose Red,usually_avoid
-Tone 7,Red,Scarlet,usually_avoid
-Tone 7,Red,Tomato,best
+Tone 7,Red,Rose Red,best
+Tone 7,Red,Scarlet,best
+Tone 7,Red,Tomato,try_carefully
 Tone 7,Maroon,Burgundy,best
-Tone 7,Maroon,Classic Maroon,best
+Tone 7,Maroon,Classic Maroon,try_carefully
 Tone 7,Maroon,Cranberry,good
-Tone 7,Maroon,Mulberry,good
-Tone 7,Maroon,Oxblood,good
-Tone 7,Maroon,Raspberry,try_carefully
-Tone 7,Maroon,Rosewood,usually_avoid
-Tone 7,Maroon,Wine,usually_avoid
+Tone 7,Maroon,Mulberry,best
+Tone 7,Maroon,Oxblood,best
+Tone 7,Maroon,Raspberry,best
+Tone 7,Maroon,Rosewood,good
+Tone 7,Maroon,Wine,good
 Tone 7,Pink,Baby Pink,usually_avoid
 Tone 7,Pink,Blush,best
-Tone 7,Pink,Deep Magenta,best
+Tone 7,Pink,Deep Magenta,good
 Tone 7,Pink,Dusty Pink,good
 Tone 7,Pink,Fuchsia,good
-Tone 7,Pink,Hot Pink,good
-Tone 7,Pink,Rose,try_carefully
-Tone 7,Pink,Salmon Pink,usually_avoid
-Tone 7,Orange,Apricot,usually_avoid
-Tone 7,Orange,Burnt Orange,usually_avoid
+Tone 7,Pink,Hot Pink,try_carefully
+Tone 7,Pink,Rose,good
+Tone 7,Pink,Salmon Pink,good
+Tone 7,Orange,Apricot,try_carefully
+Tone 7,Orange,Burnt Orange,best
 Tone 7,Orange,Dark Rust,best
-Tone 7,Orange,Marigold,best
-Tone 7,Orange,Peach,good
-Tone 7,Orange,Rust,good
+Tone 7,Orange,Marigold,good
+Tone 7,Orange,Peach,best
+Tone 7,Orange,Rust,usually_avoid
 Tone 7,Orange,Saffron,good
-Tone 7,Orange,Terracotta,try_carefully
-Tone 7,Yellow,Butter,try_carefully
-Tone 7,Yellow,Canary,usually_avoid
+Tone 7,Orange,Terracotta,best
+Tone 7,Yellow,Butter,good
+Tone 7,Yellow,Canary,best
 Tone 7,Yellow,Golden,usually_avoid
 Tone 7,Yellow,Honey,best
-Tone 7,Yellow,Lemon,best
+Tone 7,Yellow,Lemon,good
 Tone 7,Yellow,Mustard,good
-Tone 7,Yellow,Ochre,good
+Tone 7,Yellow,Ochre,try_carefully
 Tone 7,Yellow,Sunflower,good
-Tone 7,Green,Bottle Green,good
-Tone 7,Green,Emerald,try_carefully
-Tone 7,Green,Mint,usually_avoid
-Tone 7,Green,Olive,usually_avoid
-Tone 7,Green,Pista,best
-Tone 7,Green,Sage,best
-Tone 7,Green,Sea Green,good
-Tone 7,Green,Teal,good
-Tone 7,Blue,Cerulean,good
+Tone 7,Green,Bottle Green,try_carefully
+Tone 7,Green,Emerald,good
+Tone 7,Green,Mint,good
+Tone 7,Green,Olive,best
+Tone 7,Green,Pista,usually_avoid
+Tone 7,Green,Sage,good
+Tone 7,Green,Sea Green,try_carefully
+Tone 7,Green,Teal,usually_avoid
+Tone 7,Blue,Cerulean,best
 Tone 7,Blue,Denim,good
-Tone 7,Blue,Indigo,try_carefully
-Tone 7,Blue,Navy,usually_avoid
-Tone 7,Blue,Peacock Blue,usually_avoid
-Tone 7,Blue,Powder Blue,best
-Tone 7,Blue,Royal Blue,best
+Tone 7,Blue,Indigo,good
+Tone 7,Blue,Navy,good
+Tone 7,Blue,Peacock Blue,good
+Tone 7,Blue,Powder Blue,good
+Tone 7,Blue,Royal Blue,good
 Tone 7,Blue,Sky Blue,good
 Tone 7,Purple,Aubergine,good
 Tone 7,Purple,Lavender,good
 Tone 7,Purple,Lilac,good
-Tone 7,Purple,Mauve,try_carefully
-Tone 7,Purple,Orchid,usually_avoid
-Tone 7,Purple,Plum,usually_avoid
+Tone 7,Purple,Mauve,best
+Tone 7,Purple,Orchid,best
+Tone 7,Purple,Plum,good
 Tone 7,Purple,Royal Purple,best
 Tone 7,Purple,Violet,best
 Tone 7,Brown,Camel,best
 Tone 7,Brown,Caramel,good
-Tone 7,Brown,Chocolate,good
+Tone 7,Brown,Chocolate,best
 Tone 7,Brown,Cocoa,good
-Tone 7,Brown,Coffee,try_carefully
-Tone 7,Brown,Fawn,usually_avoid
-Tone 7,Brown,Mocha,usually_avoid
-Tone 7,Brown,Tan,best
-Tone 7,Neutrals,Beige,best
-Tone 7,Neutrals,Charcoal,best
+Tone 7,Brown,Coffee,best
+Tone 7,Brown,Fawn,good
+Tone 7,Brown,Mocha,good
+Tone 7,Brown,Tan,good
+Tone 7,Neutrals,Beige,good
+Tone 7,Neutrals,Charcoal,good
 Tone 7,Neutrals,Cream,good
-Tone 7,Neutrals,Jet Black,good
+Tone 7,Neutrals,Jet Black,best
 Tone 7,Neutrals,Light Grey,good
-Tone 7,Neutrals,Off White,try_carefully
-Tone 7,Neutrals,Sand,usually_avoid
-Tone 7,Neutrals,Steel Grey,usually_avoid
-Tone 8,Red,Brick Red,best
-Tone 8,Red,Cherry,best
+Tone 7,Neutrals,Off White,good
+Tone 7,Neutrals,Sand,try_carefully
+Tone 7,Neutrals,Steel Grey,good
+Tone 8,Red,Brick Red,usually_avoid
+Tone 8,Red,Cherry,good
 Tone 8,Red,Chilli,good
 Tone 8,Red,Coral Red,good
-Tone 8,Red,Crimson,good
+Tone 8,Red,Crimson,usually_avoid
 Tone 8,Red,Rose Red,try_carefully
-Tone 8,Red,Scarlet,usually_avoid
-Tone 8,Red,Tomato,usually_avoid
-Tone 8,Maroon,Burgundy,usually_avoid
+Tone 8,Red,Scarlet,best
+Tone 8,Red,Tomato,try_carefully
+Tone 8,Maroon,Burgundy,try_carefully
 Tone 8,Maroon,Classic Maroon,best
-Tone 8,Maroon,Cranberry,best
-Tone 8,Maroon,Mulberry,good
-Tone 8,Maroon,Oxblood,good
+Tone 8,Maroon,Cranberry,usually_avoid
+Tone 8,Maroon,Mulberry,best
+Tone 8,Maroon,Oxblood,try_carefully
 Tone 8,Maroon,Raspberry,good
-Tone 8,Maroon,Rosewood,try_carefully
-Tone 8,Maroon,Wine,usually_avoid
-Tone 8,Pink,Baby Pink,usually_avoid
-Tone 8,Pink,Blush,usually_avoid
-Tone 8,Pink,Deep Magenta,best
-Tone 8,Pink,Dusty Pink,best
+Tone 8,Maroon,Rosewood,best
+Tone 8,Maroon,Wine,best
+Tone 8,Pink,Baby Pink,good
+Tone 8,Pink,Blush,best
+Tone 8,Pink,Deep Magenta,good
+Tone 8,Pink,Dusty Pink,good
 Tone 8,Pink,Fuchsia,good
-Tone 8,Pink,Hot Pink,good
+Tone 8,Pink,Hot Pink,best
 Tone 8,Pink,Rose,good
-Tone 8,Pink,Salmon Pink,try_carefully
-Tone 8,Orange,Apricot,try_carefully
-Tone 8,Orange,Burnt Orange,usually_avoid
-Tone 8,Orange,Dark Rust,usually_avoid
+Tone 8,Pink,Salmon Pink,good
+Tone 8,Orange,Apricot,usually_avoid
+Tone 8,Orange,Burnt Orange,good
+Tone 8,Orange,Dark Rust,best
 Tone 8,Orange,Marigold,best
-Tone 8,Orange,Peach,best
+Tone 8,Orange,Peach,try_carefully
 Tone 8,Orange,Rust,good
 Tone 8,Orange,Saffron,good
-Tone 8,Orange,Terracotta,good
-Tone 8,Yellow,Butter,good
+Tone 8,Orange,Terracotta,try_carefully
+Tone 8,Yellow,Butter,usually_avoid
 Tone 8,Yellow,Canary,try_carefully
-Tone 8,Yellow,Golden,usually_avoid
-Tone 8,Yellow,Honey,usually_avoid
-Tone 8,Yellow,Lemon,best
-Tone 8,Yellow,Mustard,best
-Tone 8,Yellow,Ochre,good
+Tone 8,Yellow,Golden,best
+Tone 8,Yellow,Honey,good
+Tone 8,Yellow,Lemon,good
+Tone 8,Yellow,Mustard,good
+Tone 8,Yellow,Ochre,best
 Tone 8,Yellow,Sunflower,good
-Tone 8,Green,Bottle Green,good
+Tone 8,Green,Bottle Green,try_carefully
 Tone 8,Green,Emerald,good
-Tone 8,Green,Mint,try_carefully
-Tone 8,Green,Olive,usually_avoid
-Tone 8,Green,Pista,usually_avoid
+Tone 8,Green,Mint,good
+Tone 8,Green,Olive,best
+Tone 8,Green,Pista,best
 Tone 8,Green,Sage,best
-Tone 8,Green,Sea Green,best
-Tone 8,Green,Teal,good
-Tone 8,Blue,Cerulean,good
+Tone 8,Green,Sea Green,good
+Tone 8,Green,Teal,best
+Tone 8,Blue,Cerulean,try_carefully
 Tone 8,Blue,Denim,good
 Tone 8,Blue,Indigo,good
-Tone 8,Blue,Navy,try_carefully
-Tone 8,Blue,Peacock Blue,usually_avoid
-Tone 8,Blue,Powder Blue,usually_avoid
-Tone 8,Blue,Royal Blue,best
-Tone 8,Blue,Sky Blue,best
-Tone 8,Purple,Aubergine,best
+Tone 8,Blue,Navy,usually_avoid
+Tone 8,Blue,Peacock Blue,good
+Tone 8,Blue,Powder Blue,best
+Tone 8,Blue,Royal Blue,good
+Tone 8,Blue,Sky Blue,try_carefully
+Tone 8,Purple,Aubergine,good
 Tone 8,Purple,Lavender,good
-Tone 8,Purple,Lilac,good
-Tone 8,Purple,Mauve,good
-Tone 8,Purple,Orchid,try_carefully
-Tone 8,Purple,Plum,usually_avoid
-Tone 8,Purple,Royal Purple,usually_avoid
-Tone 8,Purple,Violet,best
+Tone 8,Purple,Lilac,best
+Tone 8,Purple,Mauve,best
+Tone 8,Purple,Orchid,good
+Tone 8,Purple,Plum,try_carefully
+Tone 8,Purple,Royal Purple,good
+Tone 8,Purple,Violet,good
 Tone 8,Brown,Camel,best
-Tone 8,Brown,Caramel,best
-Tone 8,Brown,Chocolate,good
-Tone 8,Brown,Cocoa,good
-Tone 8,Brown,Coffee,good
-Tone 8,Brown,Fawn,try_carefully
-Tone 8,Brown,Mocha,usually_avoid
-Tone 8,Brown,Tan,usually_avoid
-Tone 8,Neutrals,Beige,usually_avoid
-Tone 8,Neutrals,Charcoal,best
-Tone 8,Neutrals,Cream,best
+Tone 8,Brown,Caramel,usually_avoid
+Tone 8,Brown,Chocolate,best
+Tone 8,Brown,Cocoa,best
+Tone 8,Brown,Coffee,best
+Tone 8,Brown,Fawn,good
+Tone 8,Brown,Mocha,good
+Tone 8,Brown,Tan,try_carefully
+Tone 8,Neutrals,Beige,good
+Tone 8,Neutrals,Charcoal,good
+Tone 8,Neutrals,Cream,good
 Tone 8,Neutrals,Jet Black,good
 Tone 8,Neutrals,Light Grey,good
 Tone 8,Neutrals,Off White,good
 Tone 8,Neutrals,Sand,try_carefully
-Tone 8,Neutrals,Steel Grey,usually_avoid
-Tone 9,Red,Brick Red,usually_avoid
-Tone 9,Red,Cherry,best
-Tone 9,Red,Chilli,best
-Tone 9,Red,Coral Red,good
-Tone 9,Red,Crimson,good
-Tone 9,Red,Rose Red,good
-Tone 9,Red,Scarlet,try_carefully
-Tone 9,Red,Tomato,usually_avoid
-Tone 9,Maroon,Burgundy,usually_avoid
-Tone 9,Maroon,Classic Maroon,usually_avoid
-Tone 9,Maroon,Cranberry,best
-Tone 9,Maroon,Mulberry,best
-Tone 9,Maroon,Oxblood,good
+Tone 8,Neutrals,Steel Grey,best
+Tone 9,Red,Brick Red,try_carefully
+Tone 9,Red,Cherry,try_carefully
+Tone 9,Red,Chilli,usually_avoid
+Tone 9,Red,Coral Red,best
+Tone 9,Red,Crimson,try_carefully
+Tone 9,Red,Rose Red,usually_avoid
+Tone 9,Red,Scarlet,good
+Tone 9,Red,Tomato,good
+Tone 9,Maroon,Burgundy,good
+Tone 9,Maroon,Classic Maroon,good
+Tone 9,Maroon,Cranberry,good
+Tone 9,Maroon,Mulberry,good
+Tone 9,Maroon,Oxblood,best
 Tone 9,Maroon,Raspberry,good
 Tone 9,Maroon,Rosewood,good
-Tone 9,Maroon,Wine,try_carefully
-Tone 9,Pink,Baby Pink,try_carefully
-Tone 9,Pink,Blush,usually_avoid
-Tone 9,Pink,Deep Magenta,usually_avoid
-Tone 9,Pink,Dusty Pink,best
-Tone 9,Pink,Fuchsia,best
-Tone 9,Pink,Hot Pink,good
+Tone 9,Maroon,Wine,good
+Tone 9,Pink,Baby Pink,good
+Tone 9,Pink,Blush,good
+Tone 9,Pink,Deep Magenta,good
+Tone 9,Pink,Dusty Pink,good
+Tone 9,Pink,Fuchsia,good
+Tone 9,Pink,Hot Pink,best
 Tone 9,Pink,Rose,good
 Tone 9,Pink,Salmon Pink,good
-Tone 9,Orange,Apricot,good
-Tone 9,Orange,Burnt Orange,try_carefully
+Tone 9,Orange,Apricot,usually_avoid
+Tone 9,Orange,Burnt Orange,best
 Tone 9,Orange,Dark Rust,usually_avoid
-Tone 9,Orange,Marigold,usually_avoid
-Tone 9,Orange,Peach,best
-Tone 9,Orange,Rust,best
+Tone 9,Orange,Marigold,try_carefully
+Tone 9,Orange,Peach,good
+Tone 9,Orange,Rust,try_carefully
 Tone 9,Orange,Saffron,good
-Tone 9,Orange,Terracotta,good
+Tone 9,Orange,Terracotta,best
 Tone 9,Yellow,Butter,good
-Tone 9,Yellow,Canary,good
-Tone 9,Yellow,Golden,try_carefully
-Tone 9,Yellow,Honey,usually_avoid
-Tone 9,Yellow,Lemon,usually_avoid
+Tone 9,Yellow,Canary,try_carefully
+Tone 9,Yellow,Golden,good
+Tone 9,Yellow,Honey,good
+Tone 9,Yellow,Lemon,best
 Tone 9,Yellow,Mustard,best
-Tone 9,Yellow,Ochre,best
-Tone 9,Yellow,Sunflower,good
-Tone 9,Green,Bottle Green,good
-Tone 9,Green,Emerald,good
+Tone 9,Yellow,Ochre,good
+Tone 9,Yellow,Sunflower,best
+Tone 9,Green,Bottle Green,usually_avoid
+Tone 9,Green,Emerald,best
 Tone 9,Green,Mint,good
 Tone 9,Green,Olive,try_carefully
-Tone 9,Green,Pista,usually_avoid
-Tone 9,Green,Sage,usually_avoid
-Tone 9,Green,Sea Green,best
+Tone 9,Green,Pista,best
+Tone 9,Green,Sage,good
+Tone 9,Green,Sea Green,good
 Tone 9,Green,Teal,best
-Tone 9,Blue,Cerulean,best
+Tone 9,Blue,Cerulean,good
 Tone 9,Blue,Denim,good
 Tone 9,Blue,Indigo,good
-Tone 9,Blue,Navy,good
-Tone 9,Blue,Peacock Blue,try_carefully
-Tone 9,Blue,Powder Blue,usually_avoid
-Tone 9,Blue,Royal Blue,usually_avoid
+Tone 9,Blue,Navy,best
+Tone 9,Blue,Peacock Blue,best
+Tone 9,Blue,Powder Blue,best
+Tone 9,Blue,Royal Blue,good
 Tone 9,Blue,Sky Blue,best
-Tone 9,Purple,Aubergine,best
-Tone 9,Purple,Lavender,best
-Tone 9,Purple,Lilac,good
-Tone 9,Purple,Mauve,good
+Tone 9,Purple,Aubergine,good
+Tone 9,Purple,Lavender,good
+Tone 9,Purple,Lilac,best
+Tone 9,Purple,Mauve,best
 Tone 9,Purple,Orchid,good
-Tone 9,Purple,Plum,try_carefully
-Tone 9,Purple,Royal Purple,usually_avoid
-Tone 9,Purple,Violet,usually_avoid
-Tone 9,Brown,Camel,usually_avoid
+Tone 9,Purple,Plum,good
+Tone 9,Purple,Royal Purple,good
+Tone 9,Purple,Violet,good
+Tone 9,Brown,Camel,good
 Tone 9,Brown,Caramel,best
-Tone 9,Brown,Chocolate,best
-Tone 9,Brown,Cocoa,good
-Tone 9,Brown,Coffee,good
-Tone 9,Brown,Fawn,good
-Tone 9,Brown,Mocha,try_carefully
-Tone 9,Brown,Tan,usually_avoid
+Tone 9,Brown,Chocolate,good
+Tone 9,Brown,Cocoa,try_carefully
+Tone 9,Brown,Coffee,usually_avoid
+Tone 9,Brown,Fawn,try_carefully
+Tone 9,Brown,Mocha,good
+Tone 9,Brown,Tan,good
 Tone 9,Neutrals,Beige,usually_avoid
-Tone 9,Neutrals,Charcoal,usually_avoid
-Tone 9,Neutrals,Cream,best
-Tone 9,Neutrals,Jet Black,best
-Tone 9,Neutrals,Light Grey,good
-Tone 9,Neutrals,Off White,good
+Tone 9,Neutrals,Charcoal,good
+Tone 9,Neutrals,Cream,usually_avoid
+Tone 9,Neutrals,Jet Black,try_carefully
+Tone 9,Neutrals,Light Grey,try_carefully
+Tone 9,Neutrals,Off White,best
 Tone 9,Neutrals,Sand,good
-Tone 9,Neutrals,Steel Grey,try_carefully
-Tone 10,Red,Brick Red,usually_avoid
+Tone 9,Neutrals,Steel Grey,best
+Tone 10,Red,Brick Red,try_carefully
 Tone 10,Red,Cherry,usually_avoid
-Tone 10,Red,Chilli,best
-Tone 10,Red,Coral Red,best
+Tone 10,Red,Chilli,try_carefully
+Tone 10,Red,Coral Red,usually_avoid
 Tone 10,Red,Crimson,good
-Tone 10,Red,Rose Red,good
-Tone 10,Red,Scarlet,good
+Tone 10,Red,Rose Red,best
+Tone 10,Red,Scarlet,best
 Tone 10,Red,Tomato,try_carefully
-Tone 10,Maroon,Burgundy,try_carefully
-Tone 10,Maroon,Classic Maroon,usually_avoid
-Tone 10,Maroon,Cranberry,usually_avoid
-Tone 10,Maroon,Mulberry,best
-Tone 10,Maroon,Oxblood,best
-Tone 10,Maroon,Raspberry,good
+Tone 10,Maroon,Burgundy,best
+Tone 10,Maroon,Classic Maroon,good
+Tone 10,Maroon,Cranberry,best
+Tone 10,Maroon,Mulberry,try_carefully
+Tone 10,Maroon,Oxblood,good
+Tone 10,Maroon,Raspberry,best
 Tone 10,Maroon,Rosewood,good
-Tone 10,Maroon,Wine,good
+Tone 10,Maroon,Wine,best
 Tone 10,Pink,Baby Pink,good
-Tone 10,Pink,Blush,try_carefully
-Tone 10,Pink,Deep Magenta,usually_avoid
-Tone 10,Pink,Dusty Pink,usually_avoid
-Tone 10,Pink,Fuchsia,best
-Tone 10,Pink,Hot Pink,best
+Tone 10,Pink,Blush,good
+Tone 10,Pink,Deep Magenta,best
+Tone 10,Pink,Dusty Pink,good
+Tone 10,Pink,Fuchsia,try_carefully
+Tone 10,Pink,Hot Pink,good
 Tone 10,Pink,Rose,good
-Tone 10,Pink,Salmon Pink,good
-Tone 10,Orange,Apricot,good
+Tone 10,Pink,Salmon Pink,best
+Tone 10,Orange,Apricot,best
 Tone 10,Orange,Burnt Orange,good
-Tone 10,Orange,Dark Rust,try_carefully
-Tone 10,Orange,Marigold,usually_avoid
-Tone 10,Orange,Peach,usually_avoid
-Tone 10,Orange,Rust,best
-Tone 10,Orange,Saffron,best
+Tone 10,Orange,Dark Rust,good
+Tone 10,Orange,Marigold,good
+Tone 10,Orange,Peach,good
+Tone 10,Orange,Rust,good
+Tone 10,Orange,Saffron,good
 Tone 10,Orange,Terracotta,good
-Tone 10,Yellow,Butter,good
-Tone 10,Yellow,Canary,good
-Tone 10,Yellow,Golden,good
-Tone 10,Yellow,Honey,try_carefully
+Tone 10,Yellow,Butter,best
+Tone 10,Yellow,Canary,try_carefully
+Tone 10,Yellow,Golden,usually_avoid
+Tone 10,Yellow,Honey,best
 Tone 10,Yellow,Lemon,usually_avoid
-Tone 10,Yellow,Mustard,usually_avoid
-Tone 10,Yellow,Ochre,best
-Tone 10,Yellow,Sunflower,best
-Tone 10,Green,Bottle Green,best
+Tone 10,Yellow,Mustard,try_carefully
+Tone 10,Yellow,Ochre,try_carefully
+Tone 10,Yellow,Sunflower,good
+Tone 10,Green,Bottle Green,try_carefully
 Tone 10,Green,Emerald,good
 Tone 10,Green,Mint,good
-Tone 10,Green,Olive,good
-Tone 10,Green,Pista,try_carefully
-Tone 10,Green,Sage,usually_avoid
-Tone 10,Green,Sea Green,usually_avoid
-Tone 10,Green,Teal,best
+Tone 10,Green,Olive,usually_avoid
+Tone 10,Green,Pista,good
+Tone 10,Green,Sage,good
+Tone 10,Green,Sea Green,best
+Tone 10,Green,Teal,good
 Tone 10,Blue,Cerulean,best
-Tone 10,Blue,Denim,best
-Tone 10,Blue,Indigo,good
-Tone 10,Blue,Navy,good
-Tone 10,Blue,Peacock Blue,good
+Tone 10,Blue,Denim,good
+Tone 10,Blue,Indigo,usually_avoid
+Tone 10,Blue,Navy,best
+Tone 10,Blue,Peacock Blue,best
 Tone 10,Blue,Powder Blue,try_carefully
-Tone 10,Blue,Royal Blue,usually_avoid
+Tone 10,Blue,Royal Blue,try_carefully
 Tone 10,Blue,Sky Blue,usually_avoid
-Tone 10,Purple,Aubergine,usually_avoid
+Tone 10,Purple,Aubergine,try_carefully
 Tone 10,Purple,Lavender,best
-Tone 10,Purple,Lilac,best
-Tone 10,Purple,Mauve,good
-Tone 10,Purple,Orchid,good
+Tone 10,Purple,Lilac,good
+Tone 10,Purple,Mauve,try_carefully
+Tone 10,Purple,Orchid,best
 Tone 10,Purple,Plum,good
-Tone 10,Purple,Royal Purple,try_carefully
-Tone 10,Purple,Violet,usually_avoid
-Tone 10,Brown,Camel,usually_avoid
-Tone 10,Brown,Caramel,usually_avoid
+Tone 10,Purple,Royal Purple,usually_avoid
+Tone 10,Purple,Violet,best
+Tone 10,Brown,Camel,best
+Tone 10,Brown,Caramel,try_carefully
 Tone 10,Brown,Chocolate,best
 Tone 10,Brown,Cocoa,best
-Tone 10,Brown,Coffee,good
-Tone 10,Brown,Fawn,good
-Tone 10,Brown,Mocha,good
-Tone 10,Brown,Tan,try_carefully
-Tone 10,Neutrals,Beige,try_carefully
+Tone 10,Brown,Coffee,best
+Tone 10,Brown,Fawn,try_carefully
+Tone 10,Brown,Mocha,usually_avoid
+Tone 10,Brown,Tan,good
+Tone 10,Neutrals,Beige,good
 Tone 10,Neutrals,Charcoal,usually_avoid
-Tone 10,Neutrals,Cream,usually_avoid
-Tone 10,Neutrals,Jet Black,best
-Tone 10,Neutrals,Light Grey,best
-Tone 10,Neutrals,Off White,good
-Tone 10,Neutrals,Sand,good
-Tone 10,Neutrals,Steel Grey,good
+Tone 10,Neutrals,Cream,best
+Tone 10,Neutrals,Jet Black,usually_avoid
+Tone 10,Neutrals,Light Grey,good
+Tone 10,Neutrals,Off White,try_carefully
+Tone 10,Neutrals,Sand,try_carefully
+Tone 10,Neutrals,Steel Grey,try_carefully

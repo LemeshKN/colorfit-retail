@@ -3,24 +3,27 @@
 {% block content %}
 <a class="btn btn-outline btn-sm" href="{% url 'advisor:colors' shop_slug=shop.slug garment_slug=garment.slug %}">&larr; {% trans "Color families" %}</a>
 <h1 class="my-3 text-2xl font-bold">{{ garment.name }}: {{ family.name }}</h1>
-<ul class="space-y-3">
-  {% for rec in recommendations %}
-  <li class="card border-2 border-base-content/40 p-3">
-    <div class="flex items-center gap-3">
-      <div class="h-16 w-16 shrink-0 rounded" style="background-color: {{ rec.shade.hex }}"></div>
-      <div>
-        <p class="text-lg font-semibold">{{ rec.shade.name }}</p>
-        <span class="badge {% if rec.status == 'best' %}badge-primary{% else %}badge-neutral{% endif %}">
-          {% if rec.status == 'best' %}{% trans "Best for you" %}{% else %}{% trans "Good option" %}{% endif %}
-        </span>
-      </div>
-    </div>
-    {% if garment.has_pairing %}
-    <a class="btn btn-outline mt-3 w-full" href="{% url 'advisor:pairing_bottoms' shop_slug=shop.slug garment_slug=garment.slug shade_id=rec.shade.pk %}">{% trans "See matching bottom-wear" %}</a>
-    {% endif %}
-  </li>
-  {% empty %}
-  <li>{% trans "No suggestions in this color family yet." %}</li>
-  {% endfor %}
-</ul>
+<p class="mb-4">
+  {% trans "Styling suggestions for your tone." %}
+  {% if garment.has_pairing %}{% trans "Tap a shade to see matching bottoms." %}{% endif %}
+</p>
+
+{% regroup recommendations by status as groups %}
+{% for group in groups %}
+<section class="mb-6">
+  {% if group.grouper == 'best' %}
+  <h2 class="mb-2"><span class="badge badge-primary badge-lg">{% trans "Best for you" %}</span></h2>
+  <ul class="grid grid-cols-2 gap-3">
+    {% for rec in group.list %}<li>{% include "advisor/_shade_tile.html" with rec=rec best=True %}</li>{% endfor %}
+  </ul>
+  {% else %}
+  <h2 class="mb-2 text-lg font-bold">{% trans "Good option" %}</h2>
+  <ul class="grid grid-cols-2 gap-2 min-[360px]:grid-cols-3">
+    {% for rec in group.list %}<li>{% include "advisor/_shade_tile.html" with rec=rec best=False %}</li>{% endfor %}
+  </ul>
+  {% endif %}
+</section>
+{% empty %}
+<p>{% trans "No suggestions in this color family yet." %}</p>
+{% endfor %}
 {% endblock %}

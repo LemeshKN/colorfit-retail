@@ -1,0 +1,17 @@
+{% load i18n %}
+{% if garment.has_pairing %}
+<a class="card block bg-base-100 {% if best %}border-4 border-base-content p-1{% else %}border-2 border-base-content/40 p-1.5{% endif %}"
+   href="{% url 'advisor:pairing_bottoms' shop_slug=shop.slug garment_slug=garment.slug shade_id=rec.shade.pk %}">
+{% else %}
+<div class="card block bg-base-100 {% if best %}border-4 border-base-content p-1{% else %}border-2 border-base-content/40 p-1.5{% endif %}">
+{% endif %}
+  <span class="block w-full rounded-lg border-2 border-base-content/30 {% if best %}h-24{% else %}h-16{% endif %}" style="background-color: {{ rec.shade.hex }}"></span>
+  <span class="mt-1 block break-words {% if best %}text-lg font-semibold{% else %}text-sm{% endif %}">{{ rec.shade.name }}</span>
+  {% if garment.has_pairing %}
+    {% if best %}
+    <span class="block text-sm font-semibold">{% trans "Match bottoms" %} <span aria-hidden="true">&rarr;</span></span>
+    {% else %}
+    <span class="sr-only">{% trans "Match bottoms" %}</span><span class="block text-sm" aria-hidden="true">&rarr;</span>
+    {% endif %}
+  {% endif %}
+{% if garment.has_pairing %}</a>{% else %}</div>{% endif %}

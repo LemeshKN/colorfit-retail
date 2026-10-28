@@ -191,3 +191,114 @@ def test_unknown_or_inactive_shop_is_404(client, world):
 def test_card_page_shows_privacy_line(client, world):
     html = client.get("/s/sh-014/").content.decode()
     assert "does not store your name or photo" in html
+
+def _bottoms_url(world):
+    return reverse(
+        "advisor:pairing_bottoms",
+        kwargs={
+            "shop_slug": "sh-014",
+            "garment_slug": "shirt",
+            "shade_id": world.best.pk,
+        },
+    )
+
+
+def test_bottom_type_card_shows_its_three_colors_in_rank_order(client, world):
+    OutfitPairingFactory(
+        top_family=world.family,
+        bottom_type=world.jeans,
+        bottom_color=BottomColorFactory(name="Charcoal Grey"),
+        rank=3,
+    )
+    OutfitPairingFactory(
+        top_family=world.family,
+        bottom_type=world.jeans,
+        bottom_color=BottomColorFactory(name="Off White Test"),
+        rank=2,
+    )
+    _enter_card(client)
+    html = client.get(_bottoms_url(world)).content.decode()
+
+    assert "Navy Blue" in html
+    assert "Off White Test" in html
+    assert "Charcoal Grey" in html
+    assert (
+        html.index("Navy Blue")
+        < html.index("Off White Test")
+        < html.index("Charcoal Grey")
+    )
+
+
+def test_bottom_page_shows_top_shade_hint_and_pairing_link(client, world):
+    _enter_card(client)
+    html = client.get(_bottoms_url(world)).content.decode()
+
+    assert "Burgundy" in html  # the chosen top shade
+    assert "Casual" in html  # hint for Jeans
+    pairing_url = reverse(
+        "advisor:pairing",
+        kwargs={
+            "shop_slug": "sh-014",
+            "garment_slug": "shirt",
+            "shade_id": world.best.pk,
+            "bottom_slug": "jeans",
+        },
+    )
+    assert pairing_url in html
+
+
+
+def test_shades_page_shows_each_group_heading_once_in_order(client, world):
+    _enter_card(client)
+    html = client.get(_shades_url(world, world.shirt)).content.decode()
+
+    assert html.count("Best for you") == 1
+    assert html.count("Good option") == 1
+    assert (
+        html.index("Best for you")
+        < html.index("Burgundy")
+        < html.index("Good option")
+        < html.index("Wine")
+    )
+
+
+def test_shades_for_garment_with_pairing_link_to_bottoms(client, world):
+    _enter_card(client)
+    html = client.get(_shades_url(world, world.shirt)).content.decode()
+    link = reverse(
+        "advisor:pairing_bottoms",
+        kwargs={
+            "shop_slug": "sh-014",
+            "garment_slug": "shirt",
+            "shade_id": world.best.pk,
+        },
+    )
+    assert link in html
+    assert "Match bottoms" in html
+
+
+def test_shades_for_garment_without_pairing_have_no_links(client, world):
+    _enter_card(client)
+    html = client.get(_shades_url(world, world.womens)).content.decode()
+    link = reverse(
+        "advisor:pairing_bottoms",
+        kwargs={
+            "shop_slug": "sh-014",
+            "garment_slug": "womens-kurta",
+            "shade_id": world.best.pk,
+        },
+    )
+    assert "Burgundy" in html
+    assert link not in html
+    assert "Match bottoms" not in html
+
+def test_colors_page_lists_every_family(client, world):
+    for i in range(9):
+        ColorFamilyFactory(name=f"Hue {i}", slug=f"hue-{i}")
+    _enter_card(client)
+    html = client.get(
+        reverse("advisor:colors", kwargs={"shop_slug": "sh-014", "garment_slug": "shirt"})
+    ).content.decode()
+    assert "Maroon" in html
+    for i in range(9):
+        assert f"Hue {i}" in html

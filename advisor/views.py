@@ -6,6 +6,7 @@ from django.utils.translation import gettext as _
 
 from catalog.services import (
     InvalidCardError,
+    get_bottom_previews,
     get_bottom_type,
     get_bottom_types,
     get_family,
@@ -122,7 +123,12 @@ def pairing_bottoms(request, shop, card, garment_slug, shade_id):
     return render(
         request,
         "advisor/pairing_bottoms.html",
-        {"shop": shop, "garment": garment, "shade": shade, "bottoms": bottoms},
+        {
+            "shop": shop,
+            "garment": garment,
+            "shade": shade,
+            "previews": get_bottom_previews(shade, bottoms),
+        },
     )
 
 

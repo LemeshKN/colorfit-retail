@@ -4,6 +4,7 @@ from django.core.management import call_command
 from catalog.services import (
     InvalidCardError,
     check_catalog_health,
+    get_bottom_previews,
     get_bottom_type,
     get_bottom_types,
     get_family,
@@ -18,6 +19,7 @@ from catalog.services import (
 )
 
 from .factories import (
+    BottomColorFactory,
     BottomTypeFactory,
     CardCodeFactory,
     ColorFamilyFactory,
@@ -257,3 +259,26 @@ def test_get_family_shade_and_bottom_type():
     assert get_shade(999999) is None
     assert get_bottom_type("jeans") == bottom
     assert get_bottom_type("nope") is None
+
+
+@pytest.mark.django_db
+def test_bottom_previews_give_colors_in_rank_order_per_type():
+    shade = ShadeFactory()
+    jeans, chinos = BottomTypeFactory(), BottomTypeFactory()
+    c1, c2, c3 = (BottomColorFactory() for _ in range(3))
+    OutfitPairingFactory(top_family=shade.family, bottom_type=jeans, bottom_color=c2, rank=2)
+    OutfitPairingFactory(top_family=shade.family, bottom_type=jeans, bottom_color=c1, rank=1)
+    OutfitPairingFactory(top_family=shade.family, bottom_type=chinos, bottom_color=c3, rank=1)
+
+    previews = get_bottom_previews(shade, [jeans, chinos])
+
+    assert [p["bottom"] for p in previews] == [jeans, chinos]
+    assert previews[0]["colors"] == [c1, c2]
+    assert previews[1]["colors"] == [c3]
+
+
+@pytest.mark.django_db
+def test_bottom_previews_empty_when_no_rule():
+    shade = ShadeFactory()
+    previews = get_bottom_previews(shade, [BottomTypeFactory()])
+    assert previews[0]["colors"] == []

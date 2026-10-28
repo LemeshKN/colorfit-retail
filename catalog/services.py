@@ -89,7 +89,17 @@ def get_pairings(shade, bottom_type):
             top_shade__isnull=True,
             bottom_type=bottom_type,
         )
-    return rows.select_related("bottom_color").order_by("rank", "id")
+    return rows.select_related("bottom_color").order_by("rank", "id") 
+
+def get_bottom_previews(shade, bottom_types):
+    """For each bottom type, the suggested bottom colors in rank order."""
+    return [
+        {
+            "bottom": bottom,
+            "colors": [p.bottom_color for p in get_pairings(shade, bottom)],
+        }
+        for bottom in bottom_types
+    ]
 
 
 @dataclass

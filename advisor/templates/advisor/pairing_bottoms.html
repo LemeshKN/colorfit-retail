@@ -1,15 +1,37 @@
 {% extends "advisor/base.html" %}{% load i18n %}
 {% block title %}{{ shade.name }}{% endblock %}
 {% block content %}
-<a class="btn btn-outline btn-sm" href="{% url 'advisor:shades' shop_slug=shop.slug garment_slug=garment.slug family_slug=shade.family.slug %}">&larr; {{ shade.family.name }}</a>
-<div class="my-3 flex items-center gap-3">
-  <div class="h-14 w-14 shrink-0 rounded" style="background-color: {{ shade.hex }}"></div>
-  <h1 class="text-2xl font-bold">{{ shade.name }}</h1>
+<a class="btn btn-outline btn-sm" href="{% url 'advisor:shades' shop_slug=shop.slug garment_slug=garment.slug family_slug=shade.family.slug %}">&larr; {% blocktrans with name=shade.family.name %}Back to {{ name }} shades{% endblocktrans %}</a>
+
+<div class="mt-3">
+  <div class="h-20 w-full rounded-lg border-2 border-base-content/30" style="background-color: {{ shade.hex }}"></div>
+  <p class="mt-1 text-lg font-bold"><span class="font-semibold">{% trans "Your top" %}:</span> {{ shade.name }}</p>
 </div>
-<p class="mb-3">{% trans "Pick a bottom-wear type." %}</p>
-<div class="space-y-3">
-  {% for bottom in bottoms %}
-  <a class="btn btn-lg w-full" href="{% url 'advisor:pairing' shop_slug=shop.slug garment_slug=garment.slug shade_id=shade.pk bottom_slug=bottom.slug %}">{{ bottom.name }}</a>
+
+<p class="my-3">{% trans "Pick a bottom-wear type." %}</p>
+<ul class="space-y-3">
+  {% for item in previews %}
+  <li>
+    <a class="card min-h-24 w-full flex-row items-center justify-between gap-3 border-2 border-base-content/40 bg-base-100 p-3"
+       href="{% url 'advisor:pairing' shop_slug=shop.slug garment_slug=garment.slug shade_id=shade.pk bottom_slug=item.bottom.slug %}">
+      <span class="block">
+        <span class="block text-xl font-bold">{{ item.bottom.name }}</span>
+        <span class="block text-sm">
+          {% if item.bottom.slug == "jeans" %}{% trans "Casual" %}
+          {% elif item.bottom.slug == "trousers" %}{% trans "Formal and office" %}
+          {% elif item.bottom.slug == "chinos" %}{% trans "Smart casual" %}
+          {% elif item.bottom.slug == "pyjama" %}{% trans "Home and loungewear" %}{% endif %}
+        </span>
+        <span class="mt-2 flex gap-2">
+          {% for color in item.colors %}
+          <span class="block h-6 w-6 rounded-full border-2 border-base-content/30" style="background-color: {{ color.hex }}" title="{{ color.name }}"></span>
+          <span class="sr-only">{{ color.name }}</span>
+          {% endfor %}
+        </span>
+      </span>
+      <span class="text-2xl font-bold" aria-hidden="true">&rarr;</span>
+    </a>
+  </li>
   {% endfor %}
-</div>
+</ul>
 {% endblock %}
