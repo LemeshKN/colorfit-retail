@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "advisor",
     "rest_framework",
     "api",
+    "sunglasses",
 ]
 
 MIDDLEWARE = [
