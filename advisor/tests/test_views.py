@@ -189,7 +189,7 @@ def test_unknown_or_inactive_shop_is_404(client, world):
 
 
 def test_card_page_shows_privacy_line(client, world):
-    html = client.get("/s/sh-014/").content.decode()
+    html = client.get("/s/sh-014/tone/").content.decode()
     assert "does not store your name or photo" in html
 
 def _bottoms_url(world):

@@ -189,7 +189,7 @@ def test_api_shades_match_shades_page(client, api):
         shade = ShadeFactory(family=family)
         ShadeRecommendationFactory(skin_tone=tone, shade=shade, status=status)
 
-    client.post("/s/sh-014/", {"card_id": "ST-07"})
+    client.post("/s/sh-014/tone/", {"card_id": "ST-07"})
     page = client.get("/s/sh-014/shades/shirt/maroon/")
     page_ids = [r.shade_id for r in page.context["recommendations"]]
     api_ids = [
@@ -218,7 +218,7 @@ def test_api_pairings_match_pairing_page(client, api):
             rank=rank,
         )
 
-    client.post("/s/sh-014/", {"card_id": "ST-07"})
+    client.post("/s/sh-014/tone/", {"card_id": "ST-07"})
     page = client.get(f"/s/sh-014/pairing/shirt/{shade.pk}/jeans/")
     page_ids = [p.bottom_color_id for p in page.context["pairings"]]
     api_ids = [

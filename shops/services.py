@@ -1,3 +1,5 @@
+from django.contrib.auth.hashers import check_password, make_password
+from django.core.cache import cache
 from django.db.models import Count
 from django.utils import timezone
 
@@ -70,3 +72,41 @@ def get_active_shop(slug):
 def get_advice_session(pk, shop):
     """Return the AdviceSession with this id for this shop, or None."""
     return AdviceSession.objects.filter(pk=pk, shop=shop).first()
+
+
+KEY_MIN_LENGTH = 6
+KEY_MAX_WRONG_TRIES = 5
+KEY_WINDOW_SECONDS = 60
+
+
+class KeyLockedError(Exception):
+    """Too many wrong keys from this device in the last minute."""
+
+
+def shop_needs_key(shop):
+    return bool(shop.access_key_hash)
+
+
+def set_shop_key(shop, plain_key):
+    """Store a hash of the key. An empty key removes the key."""
+    plain_key = (plain_key or "").strip()
+    if plain_key and len(plain_key) < KEY_MIN_LENGTH:
+        raise ValueError(f"The key needs at least {KEY_MIN_LENGTH} characters.")
+    shop.access_key_hash = make_password(plain_key) if plain_key else ""
+    shop.save(update_fields=["access_key_hash"])
+
+
+def check_shop_key(shop, plain_key, device_id):
+    """True if the key is right, or the shop has no key.
+    Raises KeyLockedError after 5 wrong tries in a minute."""
+    if not shop.access_key_hash:
+        return True
+    cache_key = f"shopkey:{shop.pk}:{device_id}"
+    wrong_tries = cache.get(cache_key, 0)
+    if wrong_tries >= KEY_MAX_WRONG_TRIES:
+        raise KeyLockedError
+    if check_password((plain_key or "").strip(), shop.access_key_hash):
+        cache.delete(cache_key)
+        return True
+    cache.set(cache_key, wrong_tries + 1, KEY_WINDOW_SECONDS)
+    return False

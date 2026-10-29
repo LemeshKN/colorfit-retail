@@ -7,6 +7,7 @@ class Shop(models.Model):
     slug = models.SlugField(unique=True)  # for example sh-014
     city = models.CharField(max_length=60)
     is_active = models.BooleanField(default=True)
+    access_key_hash = models.CharField(max_length=128, blank=True)  # hashed, never plain text
 
     def __str__(self):
         return f"{self.name} ({self.code})"

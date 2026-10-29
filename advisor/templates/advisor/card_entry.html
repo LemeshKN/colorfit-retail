@@ -5,6 +5,13 @@
 <p class="mb-4">{% trans "Enter the card ID that the staff gave you." %}</p>
 <form method="post" class="space-y-3">
   {% csrf_token %}
+  {% if needs_key %}
+  <label for="shop_key" class="block font-semibold">{% trans "Shop pass key" %}</label>
+  <input id="shop_key" name="shop_key" type="password" autocomplete="off" required class="input input-bordered input-lg w-full">
+  {% if key_error %}
+  <p class="font-semibold text-error">{{ key_error }}</p>
+  {% endif %}
+  {% endif %}
   <label for="{{ form.card_id.id_for_label }}" class="block font-semibold">{{ form.card_id.label }}</label>
   {{ form.card_id }}
   {% for error in form.card_id.errors %}

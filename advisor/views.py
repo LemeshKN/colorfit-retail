@@ -18,7 +18,13 @@ from catalog.services import (
     list_garments,
     resolve_card,
 )
-from shops.services import get_active_shop, list_active_shops
+from shops.services import (
+    KeyLockedError,
+    check_shop_key,
+    get_active_shop,
+    list_active_shops,
+    shop_needs_key,
+)
 
 from .forms import CardEntryForm
 from .services import attach_garment, get_remembered_card, remember_card, start_visit
@@ -46,15 +52,33 @@ def shop_flow(view):
 def find_shop(request):
     return render(request, "advisor/find_shop.html", {"shops": list_active_shops()})
 
+def shop_menu(request, shop_slug):
+    shop = get_active_shop(shop_slug)
+    if shop is None:
+        raise Http404
+    return render(request, "advisor/shop_menu.html", {"shop": shop})
 
 def card_entry(request, shop_slug):
     shop = get_active_shop(shop_slug)
     if shop is None:
         raise Http404
+    needs_key = shop_needs_key(shop)
+    key_error = None
 
     if request.method == "POST":
         form = CardEntryForm(request.POST)
-        if form.is_valid():
+        key_ok = True
+        if needs_key:
+            try:
+                key_ok = check_shop_key(
+                    shop, request.POST.get("shop_key", ""), request.device_id
+                )
+            except KeyLockedError:
+                key_ok = False
+                key_error = _("Too many tries. Wait one minute and try again.")
+            if not key_ok and key_error is None:
+                key_error = _("The pass key is not correct.")
+        if key_ok and form.is_valid():
             try:
                 card = resolve_card(form.cleaned_data["card_id"])
             except InvalidCardError:
@@ -63,15 +87,18 @@ def card_entry(request, shop_slug):
                     _("We could not find this card ID. Check the card and try again."),
                 )
             else:
-                remember_card(request.session, shop, card) 
+                remember_card(request.session, shop, card)
                 request.session.set_expiry(SESSION_SECONDS)
                 start_visit(request.session, shop, card, request.device_id)
                 return redirect("advisor:garments", shop_slug=shop.slug)
     else:
         form = CardEntryForm()
 
-    return render(request, "advisor/card_entry.html", {"shop": shop, "form": form})
-
+    return render(
+        request,
+        "advisor/card_entry.html",
+        {"shop": shop, "form": form, "needs_key": needs_key, "key_error": key_error},
+    )
 
 @shop_flow
 def garments(request, shop, card):
