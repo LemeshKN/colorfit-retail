@@ -1,4 +1,5 @@
 import pytest
+from django.contrib.staticfiles import finders
 from django.core.management import call_command
 from django.urls import reverse
 
@@ -36,3 +37,9 @@ def test_admin_health_action_reports_missing_frames(admin_client):
         follow=True,
     )
     assert "has 0 of 3 frame styles" in response.content.decode()
+
+@pytest.mark.django_db
+def test_every_seeded_shape_has_a_picture():
+    call_command("seed_face_shapes")
+    for shape in FaceShapeRule.objects.all():
+        assert finders.find(f"img/shapes/{shape.slug}.svg"), f"missing: {shape.slug}"

@@ -1,0 +1,13 @@
+{% extends "advisor/base.html" %}{% load i18n %}
+{% block title %}{% trans "Sunglasses styling" %}{% endblock %}
+{% block content %}
+<a class="btn btn-sm mb-4" href="{% url 'advisor:shop_menu' shop_slug=shop.slug %}">&larr; {% trans "Back to menu" %}</a>
+<h1 class="mb-1 text-2xl font-bold">{% trans "Sunglasses styling" %}</h1>
+<p class="mb-4">{% trans "Take a photo and we suggest frame styles." %}</p>
+<ul class="mb-6 list-disc space-y-1 pl-6">
+  <li>{% trans "Look straight at the camera." %}</li>
+  <li>{% trans "Use even light with your whole face visible." %}</li>
+  <li>{% trans "No sunglasses, hat or filter." %}</li>
+</ul>
+<a class="btn btn-lg min-h-16 w-full border-2 border-blue-600 bg-base-100 text-xl" href="{% url 'sunglasses:shapes' shop_slug=shop.slug %}">{% trans "Browse all six shapes" %}</a>
+{% endblock %}

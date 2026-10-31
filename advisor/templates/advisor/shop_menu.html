@@ -9,6 +9,13 @@
       <span>{% trans "Clothing colors" %}</span><span aria-hidden="true">&rarr;</span>
     </a>
   </li>
+    {% if sunglasses_enabled %}
+  <li>
+    <a class="btn btn-lg min-h-16 w-full justify-between border-2 border-base-content/40 bg-base-100 text-xl" href="{% url 'sunglasses:intro' shop_slug=shop.slug %}">
+      <span>{% trans "Sunglasses styling" %}</span><span aria-hidden="true">&rarr;</span>
+    </a>
+  </li>
+  {% endif %}
 </ul>
 <p class="mt-6 text-sm">{% trans "This site remembers your device to count visits. It does not store your name or photo." %}</p>
 {% endblock %}

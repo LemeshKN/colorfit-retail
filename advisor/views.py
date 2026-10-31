@@ -1,5 +1,6 @@
 from functools import wraps
 
+from django.conf import settings
 from django.http import Http404
 from django.shortcuts import redirect, render
 from django.utils.translation import gettext as _
@@ -56,7 +57,14 @@ def shop_menu(request, shop_slug):
     shop = get_active_shop(shop_slug)
     if shop is None:
         raise Http404
-    return render(request, "advisor/shop_menu.html", {"shop": shop})
+    return render(
+        request,
+        "advisor/shop_menu.html",
+        {
+            "shop": shop,
+            "sunglasses_enabled": getattr(settings, "SUNGLASSES_ENABLED", False),
+        },
+    )
 
 def card_entry(request, shop_slug):
     shop = get_active_shop(shop_slug)

@@ -24,5 +24,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("i18n/", include("django.conf.urls.i18n")),
     path("", include("advisor.urls")),
+    path("", include("sunglasses.urls")),
     path("api/v1/", include("api.urls")),
+
 ]
