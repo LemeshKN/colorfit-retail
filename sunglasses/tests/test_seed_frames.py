@@ -44,3 +44,7 @@ def test_every_frame_picture_file_exists(shapes):
     call_command("seed_frame_styles")
     for frame in FrameStyle.objects.all():
         assert finders.find(frame.image_file), f"missing: {frame.image_file}"
+
+def test_frame_lines_are_short(shapes):
+    call_command("seed_frame_styles")
+    assert all(0 < len(frame.note) <= 60 for frame in FrameStyle.objects.all())

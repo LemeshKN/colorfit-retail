@@ -1,34 +1,39 @@
 {% extends "advisor/base.html" %}{% load i18n static %}
-{% block title %}{{ shape.name }}{% endblock %}
+{% block title %}{% trans "Frame styles for you" %}{% endblock %}
+{% block footer %}{% endblock %}
 {% block content %}
-<a class="btn btn-sm mb-4" href="{% url 'advisor:shop_menu' shop_slug=shop.slug %}">&larr; {% trans "Back to menu" %}</a>
+<a class="btn mb-4 min-h-12" href="{% url 'advisor:shop_menu' shop_slug=shop.slug %}">&larr; {% trans "Back to menu" %}</a>
+<h1 class="mb-3 text-2xl font-bold">{% trans "Frame styles for you" %}</h1>
 
-<div class="mb-4 flex items-center gap-4 rounded-box border-2 border-blue-600 bg-base-100 p-3">
-  <img src="{% static 'img/shapes/'|add:shape.slug|add:'.svg' %}" alt="" width="72" height="90">
-  <div>
-    <p class="text-sm font-semibold">{% trans "Face shape" %}</p>
-    <p class="text-2xl font-bold">{{ shape.name }}</p>
-  </div>
-</div>
-
-<h1 class="mb-3 text-xl font-bold">{% trans "Frame styles to try" %}</h1>
 <ul class="space-y-3">
   {% for frame in frames %}
-  <li class="flex items-center gap-4 rounded-box border-2 border-blue-600 bg-base-100 p-3">
+  <li class="flex items-center gap-4 rounded-box border-2 border-base-content/60 bg-base-100 p-3">
     <img src="{% static frame.image_file %}" alt="" width="96" height="48">
-    <p class="text-xl font-semibold">{{ frame.name }}</p>
+    <div>
+      <p class="text-xl font-semibold">{{ frame.name }}</p>
+      <p class="text-base">{{ frame.note }}</p>
+    </div>
   </li>
   {% empty %}
   <li>{% trans "No frame styles yet." %}</li>
   {% endfor %}
 </ul>
 
-<p class="mt-4">{% trans "Frame styles that often suit this face shape. This is a styling suggestion. Try the frames on and choose what you like." %}</p>
+<div class="mt-5 flex items-center gap-4">
+  <img src="{% static 'img/shapes/'|add:shape.slug|add:'.svg' %}" alt="" width="88" height="110">
+  <p class="text-xl font-bold">{% trans "Face shape:" %} {{ shape.name }}</p>
+</div>
+
+<p class="mt-3 text-base font-medium">{% trans "Styling suggestion only. Try frames on and choose what you like." %}</p>
+{% if from_photo %}
+<p class="mt-2 text-base">{% trans "Your photo was not saved." %}</p>
+{% endif %}
 
 <div class="mt-6 space-y-3">
   {% if also %}
-  <a class="btn btn-lg min-h-16 w-full border-2 border-blue-600 bg-base-100 text-xl" href="{% url 'sunglasses:shape_detail' shop_slug=shop.slug shape_slug=also.slug %}">{% trans "Also possible:" %} {{ also.name }}</a>
+  <a class="btn btn-lg min-h-16 w-full border-2 border-base-content/60 bg-base-100 text-xl" href="{% url 'sunglasses:shape_detail' shop_slug=shop.slug shape_slug=also.slug %}{% if from_photo %}?source=photo{% endif %}">{% trans "Also possible:" %} {{ also.name }}. {% trans "See its frames" %}</a>
   {% endif %}
-  <a class="btn btn-lg min-h-16 w-full border-2 border-blue-600 bg-base-100 text-xl" href="{% url 'advisor:shop_menu' shop_slug=shop.slug %}">{% trans "Back to menu" %}</a>
+  <a class="btn btn-lg min-h-16 w-full border-2 border-base-content/60 bg-base-100 text-xl" href="{% url 'sunglasses:intro' shop_slug=shop.slug %}">{% trans "Not like your face? Try again" %}</a>
+  <a class="btn btn-lg min-h-16 w-full border-2 border-base-content/60 bg-base-100 text-xl" href="{% url 'advisor:shop_menu' shop_slug=shop.slug %}">{% trans "Back to menu" %}</a>
 </div>
 {% endblock %}

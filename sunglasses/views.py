@@ -64,6 +64,7 @@ def shape_detail(request, shop, shape_slug):
             "shape": shape,
             "frames": get_frame_styles(shape),
             "also": also,
+            "from_photo": request.GET.get("source") == "photo",
         },
     )
 

@@ -2,38 +2,38 @@ from django.core.management.base import BaseCommand, CommandError
 
 from sunglasses.models import FaceShapeRule, FrameStyle
 
+# What the lens looks like. Staff and customers can use these words in the shop.
+FRAME_LOOK = {
+    "teardrop": "Wider at the top, narrower at the bottom",
+    "classic-square": "Square lenses with softly rounded corners",
+    "rectangular": "Wide, slim lenses",
+    "round": "Circular lenses",
+    "oval": "Soft, rounded lenses",
+    "square": "Boxy lenses with sharp corners",
+    "oversized": "Large lenses with extra coverage",
+    "browline": "Thick top bar, lighter lower edge",
+}
+
 # Starting list. You curate the final choices. These are styling suggestions only.
 STARTING_FRAMES = {
     "oval": [
-        ("Teardrop", "teardrop", "Soft curves that sit well on balanced proportions."),
-        ("Classic square", "classic-square", "A clean shape that keeps the look simple."),
-        ("Rectangular", "rectangular", "A slim shape that adds a little structure."),
+        ("Teardrop", "teardrop"),
+        ("Classic square", "classic-square"),
+        ("Rectangular", "rectangular"),
     ],
-    "square": [
-        ("Round", "round", "Round lenses soften strong lines."),
-        ("Teardrop", "teardrop", "A gentle curve that balances a straight jaw."),
-        ("Oval", "oval", "A soft shape that eases angles."),
-    ],
+    "square": [("Round", "round"), ("Teardrop", "teardrop"), ("Oval", "oval")],
     "round": [
-        ("Rectangular", "rectangular", "Straight lines add contrast to soft curves."),
-        ("Classic square", "classic-square", "Defined corners add structure."),
-        ("Square", "square", "Sharp corners give a crisp look."),
+        ("Rectangular", "rectangular"),
+        ("Classic square", "classic-square"),
+        ("Square", "square"),
     ],
-    "heart": [
-        ("Teardrop", "teardrop", "A wider top is balanced by a narrower bottom."),
-        ("Round", "round", "Soft curves keep the look gentle."),
-        ("Oval", "oval", "A smooth shape that suits a narrower chin."),
-    ],
+    "heart": [("Teardrop", "teardrop"), ("Round", "round"), ("Oval", "oval")],
     "oblong": [
-        ("Oversized", "oversized", "Larger lenses add width to a longer face."),
-        ("Classic square", "classic-square", "A deeper frame balances length."),
-        ("Round", "round", "Round lenses add softness."),
+        ("Oversized", "oversized"),
+        ("Classic square", "classic-square"),
+        ("Round", "round"),
     ],
-    "diamond": [
-        ("Teardrop", "teardrop", "A gentle curve that balances a narrower forehead and chin."),
-        ("Oval", "oval", "Soft curves ease strong cheekbones."),
-        ("Browline", "browline", "A strong top line balances a narrower forehead."),
-    ],
+    "diamond": [("Teardrop", "teardrop"), ("Oval", "oval"), ("Browline", "browline")],
 }
 
 
@@ -48,7 +48,7 @@ class Command(BaseCommand):
                 raise CommandError(
                     f"Face shape '{shape_slug}' is missing. Run seed_face_shapes first."
                 )
-            for rank, (name, slug, note) in enumerate(frames, start=1):
+            for rank, (name, slug) in enumerate(frames, start=1):
                 _, was_created = FrameStyle.objects.get_or_create(
                     shape=shape,
                     rank=rank,
@@ -56,7 +56,7 @@ class Command(BaseCommand):
                         "name": name,
                         "slug": slug,
                         "image_file": f"img/frames/{slug}.svg",
-                        "note": note,
+                        "note": FRAME_LOOK[slug],
                     },
                 )
                 created += int(was_created)
