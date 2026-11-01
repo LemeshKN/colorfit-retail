@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from catalog.models import BottomType, ColorFamily, GarmentType
 from catalog.services import customer_label, get_bottom_types
+from sunglasses.models import FaceShapeRule, FrameStyle
 
 
 class BottomTypeSerializer(serializers.ModelSerializer):
@@ -47,3 +48,32 @@ class PairingSerializer(serializers.Serializer):
     name = serializers.CharField(source="bottom_color.name", read_only=True)
     hex = serializers.CharField(source="bottom_color.hex", read_only=True)
     rank = serializers.IntegerField(read_only=True)
+
+class MeasurementsSerializer(serializers.Serializer):
+    """The four numbers from the browser. Nothing else is accepted."""
+
+    face_length = serializers.FloatField()
+    forehead_width = serializers.FloatField()
+    cheekbone_width = serializers.FloatField()
+    jaw_width = serializers.FloatField()
+
+    def to_internal_value(self, data):
+        if isinstance(data, dict):
+            extra = set(data) - set(self.fields)
+            if extra:
+                raise serializers.ValidationError(
+                    {"detail": "Only the four measurements are accepted."}
+                )
+        return super().to_internal_value(data)
+
+
+class ShapeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FaceShapeRule
+        fields = ["name", "slug"]
+
+
+class FrameStyleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FrameStyle
+        fields = ["name", "slug", "note", "rank", "image_file"]

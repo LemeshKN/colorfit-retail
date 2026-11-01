@@ -9,7 +9,7 @@ EXPECTED_SHAPES = 6
 FRAMES_PER_SHAPE = 3
 
 # Starting guesses. Tune these on real photos, with people who agree to it.
-ALTERNATIVE_MARGIN = 0.12
+ALTERNATIVE_MARGIN = 0.03
 LENGTH_RANGE = (0.8, 2.5)
 WIDTH_RANGE = (0.3, 1.5)
 

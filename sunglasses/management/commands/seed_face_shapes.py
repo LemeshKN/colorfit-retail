@@ -2,34 +2,41 @@ from django.core.management.base import BaseCommand
 
 from sunglasses.models import FaceShapeRule
 
-# Starting guesses, written by me from general ideas about face shapes.
-# They are NOT measured values. Tune them in admin on real photos.
+# Starting guesses from a few test photos. Tune them in admin. Not measured facts.
 STARTING_SHAPES = [
     # name, slug, sort_order, length, forehead, jaw
-    ("Oval", "oval", 1, 1.45, 0.85, 0.75),
-    ("Square", "square", 2, 1.20, 0.90, 0.90),
-    ("Round", "round", 3, 1.15, 0.88, 0.80),
-    ("Heart", "heart", 4, 1.35, 0.95, 0.62),
-    ("Oblong", "oblong", 5, 1.65, 0.88, 0.85),
-    ("Diamond", "diamond", 6, 1.40, 0.75, 0.72),
+    ("Oval", "oval", 1, 1.19, 0.86, 0.80),
+    ("Square", "square", 2, 1.21, 0.86, 0.85),
+    ("Round", "round", 3, 1.10, 0.87, 0.83),
+    ("Heart", "heart", 4, 1.24, 0.89, 0.76),
+    ("Oblong", "oblong", 5, 1.28, 0.86, 0.82),
+    ("Diamond", "diamond", 6, 1.17, 0.83, 0.78),
 ]
 
 
 class Command(BaseCommand):
-    help = "Create the six face shapes with starting ratios. Never changes a shape that exists."
+    help = "Create the six face shapes. Use --overwrite to reset the ratios."
+
+    def add_arguments(self, parser):
+        parser.add_argument("--overwrite", action="store_true")
 
     def handle(self, *args, **options):
-        created = 0
+        changed = 0
         for name, slug, order, length, forehead, jaw in STARTING_SHAPES:
-            _, was_created = FaceShapeRule.objects.get_or_create(
-                slug=slug,
-                defaults={
-                    "name": name,
-                    "sort_order": order,
-                    "length_ratio": length,
-                    "forehead_ratio": forehead,
-                    "jaw_ratio": jaw,
-                },
-            )
-            created += int(was_created)
-        self.stdout.write(f"Created {created} face shapes. Existing ones were not changed.")
+            values = {
+                "name": name,
+                "sort_order": order,
+                "length_ratio": length,
+                "forehead_ratio": forehead,
+                "jaw_ratio": jaw,
+            }
+            if options["overwrite"]:
+                _, did_change = FaceShapeRule.objects.update_or_create(
+                    slug=slug, defaults=values
+                )
+            else:
+                _, did_change = FaceShapeRule.objects.get_or_create(
+                    slug=slug, defaults=values
+                )
+            changed += int(did_change)
+        self.stdout.write(f"Created {changed} face shapes.")

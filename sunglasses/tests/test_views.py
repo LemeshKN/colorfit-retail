@@ -146,3 +146,15 @@ def test_unclear_page_uses_a_safe_default_for_unknown_reason(client, shop, on):
     html = client.get(url("unclear", shop) + "?reason=<script>").content.decode()
     assert "could not get a clear styling suggestion" in html
     assert "<script>" not in html
+
+def test_intro_has_both_photo_buttons_and_the_privacy_note(client, shop, on):
+    html = client.get(url("intro", shop)).content.decode()
+    assert 'capture="user"' in html
+    assert "Choose a photo" in html
+    assert "not uploaded or saved" in html
+    assert "/api/v1/sunglasses/classify/" in html
+
+
+def test_cut_off_reason_has_its_own_message(client, shop, on):
+    html = client.get(url("unclear", shop) + "?reason=cut_off").content.decode()
+    assert "outside the photo" in html

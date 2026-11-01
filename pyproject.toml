@@ -1,6 +1,6 @@
 [tool.ruff]
 line-length = 100
-extend-exclude = ["env", "node_modules", "*/migrations/*"]
+extend-exclude = ["env", "node_modules", "*/migrations/*", "tools"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]

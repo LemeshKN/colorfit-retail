@@ -76,7 +76,7 @@ def test_closest_shape_wins():
 @pytest.mark.django_db
 def test_close_second_shape_is_offered_as_alternative():
     oval = make_shape("Oval", 1.40, 0.85, 0.75, order=1)
-    square = make_shape("Square", 1.40, 0.90, 0.75, order=2)  # 0.05 away
+    square = make_shape("Square", 1.40, 0.87, 0.75, order=2)  # 0.02 away
     result = classify_face_shape(140, 85, 100, 75)
     assert result.primary == oval
     assert result.alternative == square

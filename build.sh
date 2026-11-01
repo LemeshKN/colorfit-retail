@@ -14,3 +14,5 @@ python manage.py createsuperuser --no-input || true
 python manage.py seed_catalog
 python manage.py load_recommendations
 python manage.py seed_pairings
+python manage.py seed_face_shapes
+python manage.py seed_frame_styles

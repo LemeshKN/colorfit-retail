@@ -1,138 +1,361 @@
-
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ColorFit Retail\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-01 11:04+0530\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-
+#: .\advisor\forms.py:8
 msgid "Card ID"
 msgstr "कार्ड आईडी"
 
+#: .\advisor\templates\advisor\_shade_tile.html:12
+#: .\advisor\templates\advisor\_shade_tile.html:14
 msgid "Match bottoms"
 msgstr "मैचिंग बॉटम"
 
+#: .\advisor\templates\advisor\base.html:24
 msgid ""
-"All advice here is a styling suggestion. Colors on your screen vary by phone "
-"and brightness."
+"All advice here is a styling suggestion. Colors on your screen vary by phone"
+" and brightness."
 msgstr ""
 "यहाँ दी गई सारी सलाह केवल स्टाइलिंग सुझाव है। आपकी स्क्रीन पर रंग फ़ोन और "
 "ब्राइटनेस के अनुसार अलग दिख सकते हैं।"
 
+#: .\advisor\templates\advisor\card_entry.html:5
 msgid "Enter the card ID that the staff gave you."
 msgstr "स्टाफ़ ने जो कार्ड आईडी बताई है, उसे दर्ज करें।"
 
+#: .\advisor\templates\advisor\card_entry.html:9
+msgid "Shop pass key"
+msgstr ""
+
+#: .\advisor\templates\advisor\card_entry.html:20
+#: .\advisor\tests\test_hindi.py:8
 msgid "Continue"
 msgstr "आगे बढ़ें"
 
+#: .\advisor\templates\advisor\card_entry.html:22
+#: .\advisor\templates\advisor\shop_menu.html:20
 msgid ""
-"This site remembers your device to count visits. It does not store your name "
-"or photo."
+"This site remembers your device to count visits. It does not store your name"
+" or photo."
 msgstr ""
-"यह साइट विज़िट गिनने के लिए आपके डिवाइस को याद रखती है। यह आपका नाम या फ़ोटो "
-"सेव नहीं करती।"
+"यह साइट विज़िट गिनने के लिए आपके डिवाइस को याद रखती है। यह आपका नाम या फ़ोटो"
+" सेव नहीं करती।"
 
+#: .\advisor\templates\advisor\colors.html:4
 msgid "Garments"
 msgstr "कपड़े"
 
+#: .\advisor\templates\advisor\colors.html:5
 msgid "pick a color family"
 msgstr "रंग का समूह चुनें"
 
+#: .\advisor\templates\advisor\find_shop.html:2
 msgid "Find a shop"
 msgstr "दुकान खोजें"
 
+#: .\advisor\templates\advisor\find_shop.html:4
 msgid "Find your shop"
 msgstr "अपनी दुकान खोजें"
 
+#: .\advisor\templates\advisor\find_shop.html:5
 msgid "Pick the shop you are in. Staff there will help you with your card."
 msgstr ""
 "जिस दुकान में आप हैं, उसे चुनें। वहाँ का स्टाफ़ आपके कार्ड में मदद करेगा।"
 
+#: .\advisor\templates\advisor\find_shop.html:18
 msgid "No shops are listed yet."
 msgstr "अभी कोई दुकान लिस्ट में नहीं है।"
 
+#: .\advisor\templates\advisor\garments.html:2
 msgid "Choose a garment"
 msgstr "कपड़ा चुनें"
 
+#: .\advisor\templates\advisor\garments.html:4
 msgid "What are you looking for?"
 msgstr "आप क्या ढूंढ रहे हैं?"
 
+#: .\advisor\templates\advisor\pairing.html:4
 msgid "Bottom types"
 msgstr "बॉटम के प्रकार"
 
+#: .\advisor\templates\advisor\pairing.html:6
 msgid "Styling suggestions for the bottom color:"
 msgstr "बॉटम के रंग के लिए स्टाइलिंग सुझाव:"
 
+#: .\advisor\templates\advisor\pairing.html:13
 msgid "Enlarge"
 msgstr "बड़ा करें"
 
+#: .\advisor\templates\advisor\pairing.html:19
 msgid "Tap to enlarge"
 msgstr "बड़ा करने के लिए टैप करें"
 
+#: .\advisor\templates\advisor\pairing.html:28
 msgid "Top"
 msgstr "टॉप"
 
+#: .\advisor\templates\advisor\pairing.html:32
 msgid "Bottom"
 msgstr "बॉटम"
 
+#: .\advisor\templates\advisor\pairing.html:35
 msgid "Styling suggestion. Colors vary by phone and brightness."
 msgstr "स्टाइलिंग सुझाव। रंग फ़ोन और ब्राइटनेस के अनुसार अलग दिख सकते हैं।"
 
+#: .\advisor\templates\advisor\pairing.html:38
+#: .\advisor\templates\advisor\pairing.html:43
 msgid "Close"
 msgstr "बंद करें"
 
+#: .\advisor\templates\advisor\pairing.html:48
 msgid "No suggestions for this combination yet."
 msgstr "इस जोड़ी के लिए अभी कोई सुझाव नहीं है।"
 
+#: .\advisor\templates\advisor\pairing_bottoms.html:4
 #, python-format
 msgid "Back to %(name)s shades"
 msgstr "%(name)s के शेड्स पर वापस जाएँ"
 
+#: .\advisor\templates\advisor\pairing_bottoms.html:8
 msgid "Your top"
 msgstr "आपका टॉप"
 
+#: .\advisor\templates\advisor\pairing_bottoms.html:11
 msgid "Pick a bottom-wear type."
 msgstr "बॉटम-वियर का प्रकार चुनें।"
 
+#: .\advisor\templates\advisor\pairing_bottoms.html:20
 msgid "Casual"
 msgstr "कैज़ुअल"
 
+#: .\advisor\templates\advisor\pairing_bottoms.html:21
 msgid "Formal and office"
 msgstr "फ़ॉर्मल और ऑफ़िस"
 
+#: .\advisor\templates\advisor\pairing_bottoms.html:22
 msgid "Smart casual"
 msgstr "स्मार्ट कैज़ुअल"
 
+#: .\advisor\templates\advisor\pairing_bottoms.html:23
 msgid "Home and loungewear"
 msgstr "घर और आरामदायक पहनावा"
 
+#: .\advisor\templates\advisor\shades.html:4
 msgid "Color families"
 msgstr "रंगों के समूह"
 
+#: .\advisor\templates\advisor\shades.html:7
 msgid "Styling suggestions for your tone."
 msgstr "आपके टोन के लिए स्टाइलिंग सुझाव।"
 
+#: .\advisor\templates\advisor\shades.html:8
 msgid "Tap a shade to see matching bottoms."
 msgstr "मैचिंग बॉटम देखने के लिए किसी शेड पर टैप करें।"
 
+#: .\advisor\templates\advisor\shades.html:15 .\catalog\services.py:186
 msgid "Best for you"
 msgstr "आपके लिए सबसे अच्छा"
 
+#: .\advisor\templates\advisor\shades.html:20 .\catalog\services.py:187
 msgid "Good option"
 msgstr "अच्छा विकल्प"
 
+#: .\advisor\templates\advisor\shades.html:27
 msgid "No suggestions in this color family yet."
 msgstr "इस रंग समूह में अभी कोई सुझाव नहीं है।"
 
+#: .\advisor\templates\advisor\shop_menu.html:5
+msgid "Choose what you want to do."
+msgstr "चुनें, आप क्या करना चाहते हैं।"
+
+#: .\advisor\templates\advisor\shop_menu.html:9
+msgid "Clothing colors"
+msgstr "कपड़ों के रंग"
+
+#: .\advisor\templates\advisor\shop_menu.html:15
+#: .\sunglasses\templates\sunglasses\intro.html:2
+#: .\sunglasses\templates\sunglasses\intro.html:6
+msgid "Sunglasses styling"
+msgstr "सनग्लासेस स्टाइलिंग"
+
+#: .\advisor\views.py:86
+msgid "Too many tries. Wait one minute and try again."
+msgstr ""
+
+#: .\advisor\views.py:88
+msgid "The pass key is not correct."
+msgstr ""
+
+#: .\advisor\views.py:95
 msgid "We could not find this card ID. Check the card and try again."
 msgstr "यह कार्ड आईडी नहीं मिली। कार्ड जाँचें और फिर से कोशिश करें।"
 
+#: .\config\settings\base.py:113
 msgid "English"
 msgstr "English"
 
+#: .\config\settings\base.py:113
 msgid "हिन्दी"
 msgstr "हिन्दी"
+
+#: .\sunglasses\templates\sunglasses\intro.html:5
+#: .\sunglasses\templates\sunglasses\shape_detail.html:5
+#: .\sunglasses\templates\sunglasses\shape_detail.html:37
+#: .\sunglasses\templates\sunglasses\unclear.html:4
+msgid "Back to menu"
+msgstr "मेनू पर वापस जाएँ"
+
+#: .\sunglasses\templates\sunglasses\intro.html:7
+msgid "Take a photo and we suggest frame styles."
+msgstr "फ़ोटो लें, हम फ़्रेम की स्टाइल सुझाएँगे।"
+
+#: .\sunglasses\templates\sunglasses\intro.html:9
+msgid "Look straight at the camera."
+msgstr "सीधे कैमरे की ओर देखें।"
+
+#: .\sunglasses\templates\sunglasses\intro.html:10
+msgid "Hold the phone at arm's length, so your face fills the screen."
+msgstr "फ़ोन को हाथ भर की दूरी पर रखें, ताकि आपका चेहरा स्क्रीन भर दे।"
+
+#: .\sunglasses\templates\sunglasses\intro.html:11
+msgid "Use even light with your whole face visible."
+msgstr "समान रोशनी में रहें और पूरा चेहरा दिखाएँ।"
+
+#: .\sunglasses\templates\sunglasses\intro.html:12
+msgid "No sunglasses, hat or filter."
+msgstr "चश्मा, टोपी या फ़िल्टर न लगाएँ।"
+
+#: .\sunglasses\templates\sunglasses\intro.html:19
+msgid "Good"
+msgstr "सही"
+
+#: .\sunglasses\templates\sunglasses\intro.html:25
+msgid "Cut off"
+msgstr ""
+
+#: .\sunglasses\templates\sunglasses\intro.html:32
+msgid "Sunglasses"
+msgstr ""
+
+#: .\sunglasses\templates\sunglasses\intro.html:40
+msgid "Getting ready..."
+msgstr "तैयारी हो रही है..."
+
+#: .\sunglasses\templates\sunglasses\intro.html:41
+msgid "Checking your photo..."
+msgstr "आपकी फ़ोटो जाँची जा रही है..."
+
+#: .\sunglasses\templates\sunglasses\intro.html:42
+msgid "Take a photo"
+msgstr "फ़ोटो लें"
+
+#: .\sunglasses\templates\sunglasses\intro.html:44
+#| msgid "Choose a garment"
+msgid "Choose a photo"
+msgstr "फ़ोटो चुनें"
+
+#: .\sunglasses\templates\sunglasses\intro.html:49
+msgid "Your photo stays on this phone. It is not uploaded or saved."
+msgstr "आपकी फ़ोटो इसी फ़ोन में रहती है। उसे अपलोड या सेव नहीं किया जाता।"
+
+#: .\sunglasses\templates\sunglasses\intro.html:51
+#: .\sunglasses\templates\sunglasses\unclear.html:10
+msgid "Browse all six shapes"
+msgstr "सभी छह आकार देखें"
+
+#: .\sunglasses\templates\sunglasses\shape_detail.html:2
+#: .\sunglasses\templates\sunglasses\shape_detail.html:6
+#| msgid "Best for you"
+msgid "Frame styles for you"
+msgstr "आपके लिए फ़्रेम स्टाइल"
+
+#: .\sunglasses\templates\sunglasses\shape_detail.html:18
+#| msgid "No shops are listed yet."
+msgid "No frame styles yet."
+msgstr "अभी कोई फ़्रेम स्टाइल नहीं है।"
+
+#: .\sunglasses\templates\sunglasses\shape_detail.html:24
+msgid "Face shape:"
+msgstr "चेहरे का आकार:"
+
+#: .\sunglasses\templates\sunglasses\shape_detail.html:27
+#| msgid "Styling suggestion. Colors vary by phone and brightness."
+msgid "Styling suggestion only. Try frames on and choose what you like."
+msgstr "यह केवल स्टाइलिंग सुझाव है। फ़्रेम पहनकर देखें और अपनी पसंद चुनें।"
+
+#: .\sunglasses\templates\sunglasses\shape_detail.html:29
+msgid "Your photo was not saved."
+msgstr "आपकी फ़ोटो सेव नहीं की गई।"
+
+#: .\sunglasses\templates\sunglasses\shape_detail.html:34
+msgid "Also possible:"
+msgstr "यह भी संभव:"
+
+#: .\sunglasses\templates\sunglasses\shape_detail.html:34
+msgid "See its frames"
+msgstr "इसके फ़्रेम देखें"
+
+#: .\sunglasses\templates\sunglasses\shape_detail.html:36
+msgid "Not like your face? Try again"
+msgstr "आपके चेहरे जैसा नहीं? फिर कोशिश करें"
+
+#: .\sunglasses\templates\sunglasses\shapes.html:2
+#: .\sunglasses\templates\sunglasses\shapes.html:5
+msgid "Pick a face shape"
+msgstr "चेहरे का आकार चुनें"
+
+#: .\sunglasses\templates\sunglasses\shapes.html:4
+msgid "Back"
+msgstr "वापस"
+
+#: .\sunglasses\templates\sunglasses\unclear.html:2
+#: .\sunglasses\templates\sunglasses\unclear.html:5
+msgid "We could not check this photo"
+msgstr "हम इस फ़ोटो को जाँच नहीं सके"
+
+#: .\sunglasses\templates\sunglasses\unclear.html:7
+msgid ""
+"Face the camera straight, keep your whole face in the frame, and use even "
+"light."
+msgstr ""
+"कैमरे की ओर सीधे देखें, पूरा चेहरा फ़्रेम में रखें और समान रोशनी में रहें।"
+
+#: .\sunglasses\templates\sunglasses\unclear.html:9
+msgid "Try another photo"
+msgstr "दूसरी फ़ोटो आज़माएँ"
+
+#: .\sunglasses\views.py:13
+msgid "We could not find a face in this photo."
+msgstr "इस फ़ोटो में चेहरा नहीं मिला।"
+
+#: .\sunglasses\views.py:14
+msgid "We found more than one face in this photo."
+msgstr "इस फ़ोटो में एक से ज़्यादा चेहरे मिले।"
+
+#: .\sunglasses\views.py:15
+msgid "Your head looks turned or tilted in this photo."
+msgstr "इस फ़ोटो में आपका सिर मुड़ा या झुका हुआ दिखता है।"
+
+#: .\sunglasses\views.py:16
+msgid "Your face looks too small in the photo."
+msgstr "फ़ोटो में आपका चेहरा बहुत छोटा दिखता है।"
+
+#: .\sunglasses\views.py:17
+msgid "Part of your face is outside the photo."
+msgstr "आपके चेहरे का कुछ हिस्सा फ़ोटो से बाहर है।"
+
+#: .\sunglasses\views.py:18
+msgid "We could not get a clear styling suggestion from this photo."
+msgstr "इस फ़ोटो से हम साफ़ स्टाइलिंग सुझाव नहीं दे सके।"
+
+#: .\sunglasses\views.py:19
+msgid "This phone cannot check photos."
+msgstr "यह फ़ोन फ़ोटो नहीं जाँच सकता।"

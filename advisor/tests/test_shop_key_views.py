@@ -71,3 +71,8 @@ def test_shop_without_key_works_without_a_key(client, open_shop, card):
     )
     assert response.status_code == 302
     assert AdviceSession.objects.count() == 1
+
+def test_find_shop_page_links_to_the_menu(client, open_shop):
+    html = client.get(reverse("advisor:find_shop")).content.decode()
+    assert reverse("advisor:shop_menu", args=[open_shop.slug]) in html
+    assert reverse("advisor:card_entry", args=[open_shop.slug]) not in html

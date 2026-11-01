@@ -137,7 +137,7 @@ REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
     "DEFAULT_AUTHENTICATION_CLASSES": [],
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"],
-    "DEFAULT_THROTTLE_RATES": {"card_resolve": "20/min"},
+    "DEFAULT_THROTTLE_RATES": {"card_resolve": "20/min", "sunglasses_classify": "20/min"},
 }
 
 SUNGLASSES_ENABLED = env.bool("SUNGLASSES_ENABLED", default=False)

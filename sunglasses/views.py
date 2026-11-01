@@ -14,6 +14,7 @@ UNCLEAR_REASONS = {
     "many_faces": _("We found more than one face in this photo."),
     "turned": _("Your head looks turned or tilted in this photo."),
     "small": _("Your face looks too small in the photo."),
+    "cut_off": _("Part of your face is outside the photo."),
     "unreadable": _("We could not get a clear styling suggestion from this photo."),
     "unsupported": _("This phone cannot check photos."),
 }

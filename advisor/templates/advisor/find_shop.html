@@ -6,7 +6,7 @@
 <ul class="space-y-3">
   {% for shop in shops %}
   <li>
-    <a class="card flex-row items-center justify-between gap-3 border-2 border-base-content/40 bg-base-100 p-3" href="{% url 'advisor:card_entry' shop_slug=shop.slug %}">
+    <a class="card flex-row items-center justify-between gap-3 border-2 border-base-content/40 bg-base-100 p-3" href="{% url 'advisor:shop_menu' shop_slug=shop.slug %}">
       <span class="block min-w-0">
         <span class="block break-words text-lg font-semibold">{{ shop.name }}</span>
         <span class="block text-sm">{{ shop.city }}</span>

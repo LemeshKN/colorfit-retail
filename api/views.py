@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.http import Http404
 from rest_framework import serializers
 from rest_framework.response import Response
 from rest_framework.throttling import AnonRateThrottle
@@ -14,12 +16,21 @@ from catalog.services import (
     list_garments,
     resolve_card,
 )
+from sunglasses.services import (
+    InvalidMeasurementError,
+    NoShapeRulesError,
+    classify_face_shape,
+    get_frame_styles,
+)
 
 from .serializers import (
     FamilySerializer,
+    FrameStyleSerializer,
     GarmentSerializer,
+    MeasurementsSerializer,
     PairingSerializer,
     ShadeSerializer,
+    ShapeSerializer,
 )
 
 CARD_NOT_FOUND = "We could not find this card ID."
@@ -90,3 +101,39 @@ class PairingListView(APIView):
         if shade is None or bottom is None:
             return Response({"detail": "Shade or bottom type not found."}, status=404)
         return Response(PairingSerializer(get_pairings(shade, bottom), many=True).data)
+
+class SunglassesThrottle(AnonRateThrottle):
+    scope = "sunglasses_classify"
+
+
+class SunglassesClassifyView(APIView):
+    """Four numbers in, face shape and frame styles out. Nothing is saved."""
+
+    throttle_classes = [SunglassesThrottle]
+
+    def post(self, request):
+        if not getattr(settings, "SUNGLASSES_ENABLED", False):
+            raise Http404
+        form = MeasurementsSerializer(data=request.data)
+        form.is_valid(raise_exception=True)
+        try:
+            result = classify_face_shape(**form.validated_data)
+        except InvalidMeasurementError:
+            return Response(
+                {"detail": "These measurements do not look like a face. Try another photo."},
+                status=400,
+            )
+        except NoShapeRulesError:
+            return Response({"detail": "Face shapes are not set up yet."}, status=503)
+        alternative = (
+            ShapeSerializer(result.alternative).data if result.alternative else None
+        )
+        return Response(
+            {
+                "shape": ShapeSerializer(result.primary).data,
+                "alternative": alternative,
+                "frames": FrameStyleSerializer(
+                    get_frame_styles(result.primary), many=True
+                ).data,
+            }
+        )

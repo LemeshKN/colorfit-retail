@@ -10,4 +10,5 @@ urlpatterns = [
     path("cards/resolve/", views.CardResolveView.as_view(), name="card_resolve"),
     path("shades/", views.ShadeListView.as_view(), name="shades"),
     path("pairings/", views.PairingListView.as_view(), name="pairings"),
+    path("sunglasses/classify/",views.SunglassesClassifyView.as_view(),name="sunglasses_classify"),
 ]
