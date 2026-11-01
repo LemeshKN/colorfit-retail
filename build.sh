@@ -12,7 +12,7 @@ python manage.py createsuperuser --no-input || true
 
 # DEMO data. Replace with real values before a real shop uses the app.
 python manage.py seed_catalog
-python manage.py load_recommendations
-python manage.py seed_pairings
+#python manage.py load_recommendations
+#python manage.py seed_pairings
 python manage.py seed_face_shapes
 python manage.py seed_frame_styles
