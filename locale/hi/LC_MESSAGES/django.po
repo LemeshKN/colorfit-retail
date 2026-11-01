@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorFit Retail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 11:04+0530\n"
+"POT-Creation-Date: 2026-11-01 13:24+0530\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +36,7 @@ msgid "Shop pass key"
 msgstr ""
 
 #: .\advisor\templates\advisor\card_entry.html:20
-#: .\advisor\tests\test_hindi.py:8
+#: .\advisor\tests\test_hindi.py:9
 msgid "Continue"
 msgstr "आगे बढ़ें"
 
@@ -258,27 +258,32 @@ msgid "Take a photo"
 msgstr "फ़ोटो लें"
 
 #: .\sunglasses\templates\sunglasses\intro.html:44
-#| msgid "Choose a garment"
 msgid "Choose a photo"
 msgstr "फ़ोटो चुनें"
 
-#: .\sunglasses\templates\sunglasses\intro.html:49
+#: .\sunglasses\templates\sunglasses\intro.html:50
+msgid "Capture"
+msgstr "फ़ोटो खींचें"
+
+#: .\sunglasses\templates\sunglasses\intro.html:51
+msgid "Cancel"
+msgstr "रद्द करें"
+
+#: .\sunglasses\templates\sunglasses\intro.html:56
 msgid "Your photo stays on this phone. It is not uploaded or saved."
 msgstr "आपकी फ़ोटो इसी फ़ोन में रहती है। उसे अपलोड या सेव नहीं किया जाता।"
 
-#: .\sunglasses\templates\sunglasses\intro.html:51
+#: .\sunglasses\templates\sunglasses\intro.html:58
 #: .\sunglasses\templates\sunglasses\unclear.html:10
 msgid "Browse all six shapes"
 msgstr "सभी छह आकार देखें"
 
 #: .\sunglasses\templates\sunglasses\shape_detail.html:2
 #: .\sunglasses\templates\sunglasses\shape_detail.html:6
-#| msgid "Best for you"
 msgid "Frame styles for you"
 msgstr "आपके लिए फ़्रेम स्टाइल"
 
 #: .\sunglasses\templates\sunglasses\shape_detail.html:18
-#| msgid "No shops are listed yet."
 msgid "No frame styles yet."
 msgstr "अभी कोई फ़्रेम स्टाइल नहीं है।"
 
@@ -287,7 +292,6 @@ msgid "Face shape:"
 msgstr "चेहरे का आकार:"
 
 #: .\sunglasses\templates\sunglasses\shape_detail.html:27
-#| msgid "Styling suggestion. Colors vary by phone and brightness."
 msgid "Styling suggestion only. Try frames on and choose what you like."
 msgstr "यह केवल स्टाइलिंग सुझाव है। फ़्रेम पहनकर देखें और अपनी पसंद चुनें।"
 

@@ -153,6 +153,8 @@ def test_intro_has_both_photo_buttons_and_the_privacy_note(client, shop, on):
     assert "Choose a photo" in html
     assert "not uploaded or saved" in html
     assert "/api/v1/sunglasses/classify/" in html
+    assert 'id="cam-open"' in html
+    assert 'id="cam-video"' in html
 
 
 def test_cut_off_reason_has_its_own_message(client, shop, on):
