@@ -5,12 +5,12 @@ from sunglasses.models import FaceShapeRule
 # Starting guesses from a few test photos. Tune them in admin. Not measured facts.
 STARTING_SHAPES = [
     # name, slug, sort_order, length, forehead, jaw
-    ("Oval", "oval", 1, 1.19, 0.86, 0.80),
-    ("Square", "square", 2, 1.21, 0.86, 0.85),
-    ("Round", "round", 3, 1.10, 0.87, 0.83),
-    ("Heart", "heart", 4, 1.24, 0.89, 0.76),
-    ("Oblong", "oblong", 5, 1.28, 0.86, 0.82),
-    ("Diamond", "diamond", 6, 1.17, 0.83, 0.78),
+    ("Oval", "oval", 1, 1.20, 0.86, 0.79),
+    ("Square", "square", 2, 1.18, 0.83, 0.83),
+    ("Round", "round", 3, 1.16, 0.84, 0.80),
+    ("Heart", "heart", 4, 1.22, 0.88, 0.78),
+    ("Oblong", "oblong", 5, 1.22, 0.85, 0.80),
+    ("Diamond", "diamond", 6, 1.20, 0.84, 0.83),
 ]
 
 
