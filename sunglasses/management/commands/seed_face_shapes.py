@@ -2,15 +2,14 @@ from django.core.management.base import BaseCommand
 
 from sunglasses.models import FaceShapeRule
 
-# Starting guesses from a few test photos. Tune them in admin. Not measured facts.
 STARTING_SHAPES = [
     # name, slug, sort_order, length, forehead, jaw
-    ("Oval", "oval", 1, 1.20, 0.86, 0.79),
-    ("Square", "square", 2, 1.18, 0.83, 0.83),
-    ("Round", "round", 3, 1.16, 0.84, 0.80),
-    ("Heart", "heart", 4, 1.22, 0.88, 0.78),
-    ("Oblong", "oblong", 5, 1.22, 0.85, 0.80),
-    ("Diamond", "diamond", 6, 1.20, 0.84, 0.83),
+    ("Oval", "oval", 1, 1.21, 0.85, 0.79),
+    ("Square", "square", 2, 1.20, 0.84, 0.82),
+    ("Round", "round", 3, 1.11, 0.84, 0.80),
+    ("Heart", "heart", 4, 1.24, 0.86, 0.79),
+    ("Oblong", "oblong", 5, 1.24, 0.85, 0.81),
+    ("Diamond", "diamond", 6, 1.19, 0.86, 0.82),
 ]
 
 
