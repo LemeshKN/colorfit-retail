@@ -11,6 +11,6 @@ TRYON_URLS = {
     "browline": "https://res.cloudinary.com/uvuvo6q3/image/upload/v1793868371/browline.png",
     "oval": "https://res.cloudinary.com/uvuvo6q3/image/upload/v1793868371/oval.png",
     "classic-square": "https://res.cloudinary.com/uvuvo6q3/image/upload/v1793868371/classic-square.png",
-    # "cat-eye": "https://res.cloudinary.com/uvuvo6q3/image/upload/v1793868371/cat-eye.png",
+    "cat-eye": "https://res.cloudinary.com/uvuvo6q3/image/upload/v1793868371/cat-eye.png",
     "teardrop": "https://res.cloudinary.com/uvuvo6q3/image/upload/v1793868371/teardrop.png",
 }

@@ -1,3 +1,5 @@
+// Photo from the phone's own camera app or the gallery. The live camera and
+// try-on are in sunglasses_live.js. Only four numbers are sent to the server.
 const root = document.getElementById("scan");
 const cfg = root.dataset;
 const statusEl = document.getElementById("scan-status");
@@ -137,57 +139,6 @@ async function handleFile(input) {
   }
   return processCanvas(canvas);
 }
-
-// In-page front camera. If it is not available or not allowed, use the file picker.
-const cam = document.getElementById("cam");
-const video = document.getElementById("cam-video");
-let stream = null;
-
-function stopCamera() {
-  if (stream) stream.getTracks().forEach((track) => track.stop());
-  stream = null;
-  cam.style.display = "none";
-}
-
-async function openCamera() {
-  setStatus(cfg.textPrepare);
-  loadTool().catch(() => {});
-  const fallback = () => {
-    setStatus("");
-    document.getElementById("photo-take").click();
-  };
-  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return fallback();
-  try {
-    stream = await navigator.mediaDevices.getUserMedia({
-      video: { facingMode: "user", width: { ideal: 1280 }, height: { ideal: 960 } },
-      audio: false,
-    });
-    video.srcObject = stream;
-    await video.play();
-  } catch (error) {
-    stopCamera();
-    return fallback();
-  }
-  cam.style.display = "flex";
-}
-
-document.getElementById("cam-open").addEventListener("click", openCamera);
-document.getElementById("cam-cancel").addEventListener("click", () => {
-  stopCamera();
-  setStatus("");
-});
-document.getElementById("cam-shoot").addEventListener("click", async () => {
-  const w = video.videoWidth;
-  const h = video.videoHeight;
-  if (!w || !h) return;
-  const scale = Math.min(1, MAX_SIDE / Math.max(w, h));
-  const canvas = document.createElement("canvas");
-  canvas.width = Math.round(w * scale);
-  canvas.height = Math.round(h * scale);
-  canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
-  stopCamera();
-  await processCanvas(canvas);
-});
 
 document.querySelectorAll("#scan label").forEach((label) => {
   label.addEventListener("click", () => {

@@ -7,7 +7,7 @@
   {% for shape in shapes %}
   <li>
     <a class="flex min-h-40 flex-col items-center justify-center gap-2 rounded-box border-2 border-base-content/60 bg-base-100 p-3 text-lg font-semibold" href="{% url 'sunglasses:shape_detail' shop_slug=shop.slug shape_slug=shape.slug %}">
-      <img src="{% static 'img/shapes/'|add:shape.slug|add:'.svg' %}" alt="" width="96" height="120">
+      {% if shape.image_url %}<img src="{{ shape.image_url }}" alt="" width="96" height="120">{% else %}<img src="{% static 'img/shapes/'|add:shape.slug|add:'.svg' %}" alt="" width="96" height="120">{% endif %}
       <span>{{ shape.name }}</span>
     </a>
   </li>

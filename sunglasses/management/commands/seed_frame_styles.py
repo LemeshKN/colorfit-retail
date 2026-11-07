@@ -12,28 +12,35 @@ FRAME_LOOK = {
     "square": "Boxy lenses with sharp corners",
     "oversized": "Large lenses with extra coverage",
     "browline": "Thick top bar, lighter lower edge",
+    "cat-eye": "Upswept outer corners",
 }
 
 # Starting list. You curate the final choices. These are styling suggestions only.
 STARTING_FRAMES = {
-    "oval": [
-        ("Teardrop", "teardrop"),
-        ("Classic square", "classic-square"),
-        ("Rectangular", "rectangular"),
+    "oval": [("Oversized", "oversized"),
+            ("Square", "square"),
+            ("Rectangular", "rectangular"),
     ],
-    "square": [("Round", "round"), ("Teardrop", "teardrop"), ("Oval", "oval")],
-    "round": [
-        ("Rectangular", "rectangular"),
-        ("Classic square", "classic-square"),
-        ("Square", "square"),
+    "square": [("Round", "round"), 
+               ("Cat-Eye","cat-eye"), 
+               ("Oval", "oval")
     ],
-    "heart": [("Teardrop", "teardrop"), ("Round", "round"), ("Oval", "oval")],
-    "oblong": [
-        ("Oversized", "oversized"),
-        ("Classic square", "classic-square"),
-        ("Round", "round"),
+    "round": [("Rectangular", "rectangular"),
+             ("Browline", "browline"),
+             ("Teardrop", "teardrop"),
     ],
-    "diamond": [("Teardrop", "teardrop"), ("Oval", "oval"), ("Browline", "browline")],
+    "heart": [("Teardrop", "teardrop"),
+               ("Cat-Eye","cat-eye"),
+                 ("Oval", "oval")
+    ],
+    "oblong": [("Oversized", "oversized"),
+               ("Classic square", "classic-square"),
+               ("Square", "square"),
+    ],
+    "diamond": [("Square", "square"),
+                 ("Oval", "oval"), 
+                 ("Browline", "browline")
+    ],
 }
 
 

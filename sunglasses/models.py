@@ -27,6 +27,14 @@ class FaceShapeRule(models.Model):
         validators=RATIO_RULES, help_text="Jaw width divided by cheekbone width."
     )
     is_active = models.BooleanField(default=True)
+        
+    image_url = models.URLField(
+        max_length=300,
+        blank=True,
+        validators=[validate_cloudinary_url],
+        help_text="Cloudinary picture of this face shape. "
+        "Leave empty to use the built-in drawing.",
+    )
 
     class Meta:
         ordering = ["sort_order", "name"]

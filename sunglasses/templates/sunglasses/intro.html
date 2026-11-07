@@ -1,60 +1,112 @@
 {% extends "advisor/base.html" %}{% load i18n static %}
 {% block title %}{% trans "Sunglasses styling" %}{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/tryon.css' %}">{% endblock %}
 {% block footer %}{% endblock %}
 {% block content %}
-<a class="btn mb-4 min-h-12" href="{% url 'advisor:shop_menu' shop_slug=shop.slug %}">&larr; {% trans "Back to menu" %}</a>
-<h1 class="mb-1 text-2xl font-bold">{% trans "Sunglasses styling" %}</h1>
-<p class="mb-4">{% trans "Take a photo and we suggest frame styles." %}</p>
-<ul class="mb-6 list-disc space-y-1 pl-6">
-  <li>{% trans "Look straight at the camera." %}</li>
-  <li>{% trans "Hold the phone at arm's length, so your face fills the screen." %}</li>
-  <li>{% trans "Use even light with your whole face visible." %}</li>
-  <li>{% trans "No sunglasses, hat or filter." %}</li>
-</ul>
-<div class="mb-6 flex flex-wrap gap-3 text-center text-sm font-semibold">
-  <figure>
-    <div style="position:relative;width:80px;height:96px;overflow:hidden;border:4px solid #16a34a;border-radius:12px;background:#fff">
-      <img src="{% static 'img/shapes/oval.svg' %}" alt="" width="64" height="80" style="position:absolute;left:4px;top:4px">
-    </div>
-    <figcaption class="mt-1 text-green-700">{% trans "Good" %}</figcaption>
+<div class="gi-page">
+  <a class="gi-back" href="{% url 'advisor:shop_menu' shop_slug=shop.slug %}">&larr; {% trans "Back to menu" %}</a>
+  <h1 class="gi-title">{% trans "Sunglasses styling" %}</h1>
+  <p class="gi-sub">{% trans "Take a photo and we suggest frame styles." %}</p>
+  <div class="gi-examples">
+    <figure class="gi-ex gi-ok">
+      <div class="gi-frame"><img src="https://res.cloudinary.com/uvuvo6q3/image/upload/v1793972277/guide-good.png" alt="" width="264" height="330"></div>
+      <figcaption>{% trans "Good" %}</figcaption>
     </figure>
-    <figure>
-    <div style="position:relative;width:80px;height:96px;overflow:hidden;border:4px solid #dc2626;border-radius:12px;background:#fff">
-      <img src="{% static 'img/shapes/oval.svg' %}" alt="" width="64" height="80" style="position:absolute;left:-30px;top:4px">
-    </div>
-    <figcaption class="mt-1 text-red-700">{% trans "Cut off" %}</figcaption>
-  </figure>
-  <figure>
-    <div style="position:relative;width:80px;height:96px;overflow:hidden;border:4px solid #dc2626;border-radius:12px;background:#fff">
-      <img src="{% static 'img/shapes/oval.svg' %}" alt="" width="64" height="80" style="position:absolute;left:4px;top:4px">
-      <img src="{% static 'img/frames/classic-square.svg' %}" alt="" width="48" height="24" style="position:absolute;left:12px;top:25px">
-    </div>
-    <figcaption class="mt-1 text-red-700">{% trans "Sunglasses" %}</figcaption>
-  </figure>
-</div>
+    <figure class="gi-ex gi-bad gi-cut">
+      <div class="gi-frame"><img src="https://res.cloudinary.com/uvuvo6q3/image/upload/v1793972277/guide-good.png" alt="" width="264" height="330"></div>
+      <figcaption>{% trans "Cut off" %}</figcaption>
+    </figure>
+    <figure class="gi-ex gi-bad">
+      <div class="gi-frame"><img src="https://res.cloudinary.com/uvuvo6q3/image/upload/v1793972277/guide-sunglasses.png" alt="" width="264" height="330"></div>
+      <figcaption>{% trans "Sunglasses" %}</figcaption>
+    </figure>
+  </div>
+  <ul class="gi-tips">
+    <li>{% trans "Look straight at the camera." %}</li>
+    <li>{% trans "Use even light with your whole face visible." %}</li>
+  </ul>
 
-<div id="scan" class="space-y-3"
+{% translate "Fit your face inside the oval." as t_ready %}
+{% translate "Hold still" as t_hold %}
+{% translate "Checking your face..." as t_checking %}
+{% translate "Getting ready..." as t_getting %}
+{% translate "Start" as t_start %}
+{% translate "Cancel" as t_cancel %}
+{% translate "Done" as t_done %}
+{% translate "Opening the camera..." as t_opening %}
+{% translate "The camera could not open. Check that you allowed camera access." as t_nocam %}
+{% translate "This phone cannot run the live try-on." as t_unsupported %}
+{% translate "Look straight at the camera." as t_look %}
+{% translate "Face the camera to see the frame." as t_turn %}
+{% translate "Loading this frame..." as t_frame_loading %}
+{% translate "This frame picture could not load." as t_frame_failed %}
+{% translate "We could not find a face in this photo." as t_no_face %}
+{% translate "We found more than one face in this photo." as t_many_faces %}
+{% translate "Your head looks turned or tilted in this photo." as t_turned %}
+{% translate "Your face looks too small in the photo." as t_small %}
+{% translate "Part of your face is outside the photo." as t_cut_off %}
+{% translate "We could not get a clear styling suggestion from this photo." as t_unreadable %}
+
+<div id="scan" class="gi-actions"
      data-api-url="{% url 'api:sunglasses_classify' %}"
      data-shape-url="{% url 'sunglasses:shape_detail' shop_slug=shop.slug shape_slug='SLUG' %}"
      data-unclear-url="{% url 'sunglasses:unclear' shop_slug=shop.slug %}"
      data-text-prepare="{% trans 'Getting ready...' %}"
      data-text-checking="{% trans 'Checking your photo...' %}">
-    <button type="button" id="cam-open" class="btn min-h-14 w-full border-2 border-base-content/60 bg-base-100 text-lg">{% trans "Take a photo" %}</button>
+  <button type="button" id="cam-open" class="gi-btn gi-btn-main">{% trans "Take a photo" %}</button>
   <input id="photo-take" type="file" accept="image/*" capture="user" style="display:none">
-  <label for="photo-pick" class="btn btn min-h-14 w-full border-2 border-base-content/60 bg-base-100 text-lg">{% trans "Choose a photo" %}</label>
+  <label for="photo-pick" class="gi-btn gi-btn-alt">{% trans "Choose a photo" %}</label>
   <input id="photo-pick" type="file" accept="image/*" style="display:none">
 </div>
-  <div id="cam" style="display:none;position:fixed;inset:0;z-index:50;background:#000;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:12px">
-    <video id="cam-video" playsinline muted style="max-width:100%;max-height:70vh;transform:scaleX(-1)"></video>
-    <div style="display:flex;gap:12px">
-      <button type="button" id="cam-shoot" class="btn btn-primary min-h-14 text-lg">{% trans "Capture" %}</button>
-      <button type="button" id="cam-cancel" class="btn min-h-14 text-lg">{% trans "Cancel" %}</button>
+
+<div id="live" class="tryon-panel" hidden
+     data-api-url="{% url 'api:sunglasses_classify' %}"
+     data-shape-url="{% url 'sunglasses:shape_detail' shop_slug=shop.slug shape_slug='SLUG' %}"
+     data-text-ready="{{ t_ready }}"
+     data-text-hold="{{ t_hold }}"
+     data-text-checking="{{ t_checking }}"
+     data-text-getting="{{ t_getting }}"
+     data-text-start="{{ t_start }}"
+     data-text-cancel="{{ t_cancel }}"
+     data-text-done="{{ t_done }}"
+     data-text-opening="{{ t_opening }}"
+     data-text-no-camera="{{ t_nocam }}"
+     data-text-unsupported="{{ t_unsupported }}"
+     data-text-look-at="{{ t_look }}"
+     data-text-turn-back="{{ t_turn }}"
+     data-text-frame-loading="{{ t_frame_loading }}"
+     data-text-frame-failed="{{ t_frame_failed }}"
+     data-text-no-face="{{ t_no_face }}"
+     data-text-many-faces="{{ t_many_faces }}"
+     data-text-turned="{{ t_turned }}"
+     data-text-small="{{ t_small }}"
+     data-text-cut-off="{{ t_cut_off }}"
+     data-text-unreadable="{{ t_unreadable }}">
+  <div id="live-stage" class="tryon-stage">
+    <div class="tryon-mirror">
+      <video id="live-video" playsinline muted autoplay></video>
+      <canvas id="live-canvas"></canvas>
     </div>
+    <div id="live-guide" class="scan-guide">
+      <div class="scan-oval"><span class="scan-line"></span></div>
+    </div>
+    <p id="live-count" class="scan-count" hidden></p>
+    <p id="live-status" class="tryon-status" role="status"></p>
+    <button type="button" id="live-close" class="tryon-close">{% trans "Cancel" %}</button>
   </div>
+  <div id="live-controls" class="scan-controls">
+    <button type="button" id="live-start" class="scan-start" disabled>{% trans "Getting ready..." %}</button>
+  </div>
+  <ul id="live-grid" class="tryon-grid" hidden></ul>
+</div>
 
-<p id="scan-status" role="status" aria-live="polite" class="mt-3 text-base font-semibold"></p>
-<p class="mt-3 text-base">{% trans "Your photo stays on this phone. It is not uploaded or saved." %}</p>
-
-<a class="btn btn-lg mt-6 min-h-16 w-full border-2 border-base-content/60 bg-base-100 text-xl" href="{% url 'sunglasses:shapes' shop_slug=shop.slug %}">{% trans "Browse all six shapes" %}</a>
+<p id="scan-status" role="status" aria-live="polite" class="gi-status"></p>
+<p class="gi-note">{% trans "Your photo stays on this phone. It is not uploaded or saved." %}</p>
+<a class="gi-browse" href="{% url 'sunglasses:shapes' shop_slug=shop.slug %}">{% trans "Browse all six shapes" %}</a>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/tryon_engine.js' %}" defer></script>
+<script src="{% static 'js/sunglasses_live.js' %}" defer></script>
 <script type="module" src="{% static 'js/sunglasses_scan.js' %}"></script>
 {% endblock %}

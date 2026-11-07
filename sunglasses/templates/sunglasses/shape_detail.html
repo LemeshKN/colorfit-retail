@@ -1,10 +1,20 @@
-{% extends "advisor/base.html" %}{% load i18n static %}
+{% extends "advisor/base.html" %}{% load i18n static l10n %}
 {% block title %}{% trans "Frame styles for you" %}{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/tryon.css' %}">{% endblock %}
 {% block footer %}{% endblock %}
 {% block content %}
-<a class="btn mb-4 min-h-12" href="{% url 'advisor:shop_menu' shop_slug=shop.slug %}">&larr; {% trans "Back to menu" %}</a>
-<h1 class="mb-3 text-2xl font-bold">{% trans "Frame styles for you" %}</h1>
+<a class="btn mb-4 min-h-12" href="{% url 'advisor:shop_menu' shop_slug=shop.slug %}">&larr; {% trans "Menu" %}</a>
 
+<div class="flex items-center gap-4">
+  {% if shape.image_url %}<img src="{{ shape.image_url }}" alt="" width="88" height="110">{% else %}<img src="{% static 'img/shapes/'|add:shape.slug|add:'.svg' %}" alt="" width="88" height="110">{% endif %}
+  <div>
+    <p class="text-xl font-bold">{% trans "Face shape:" %} {{ shape.name }}</p>
+    <p class="cf-note font-medium">{% trans "Styling suggestion only. Try frames on and choose what you like." %}</p>
+    {% if from_photo %}<p class="cf-note">{% trans "Your photo was not saved." %}</p>{% endif %}
+  </div>
+</div>
+
+<h1 class="mb-3 mt-5 text-2xl font-bold">{% trans "Frame styles for you" %}</h1>
 <ul class="space-y-3">
   {% for frame in frames %}
   <li class="flex items-center gap-4 rounded-box border-2 border-base-content/60 bg-base-100 p-3">
@@ -19,21 +29,60 @@
   {% endfor %}
 </ul>
 
-<div class="mt-5 flex items-center gap-4">
-  <img src="{% static 'img/shapes/'|add:shape.slug|add:'.svg' %}" alt="" width="88" height="110">
-  <p class="text-xl font-bold">{% trans "Face shape:" %} {{ shape.name }}</p>
+{% translate "Opening the camera..." as t_opening %}
+{% translate "Loading the face tracker..." as t_loading %}
+{% translate "Look straight at the camera." as t_look %}
+{% translate "Face the camera to see the frame." as t_turn %}
+{% translate "The camera could not open. Check that you allowed camera access." as t_nocam %}
+{% translate "This phone cannot run the live try-on." as t_unsupported %}
+{% translate "Loading this frame..." as t_frame_loading %}
+{% translate "This frame picture could not load." as t_frame_failed %}
+<section id="tryon" class="mt-6" hidden
+  data-text-opening="{{ t_opening }}"
+  data-text-loading="{{ t_loading }}"
+  data-text-look-at="{{ t_look }}"
+  data-text-turn-back="{{ t_turn }}"
+  data-text-no-camera="{{ t_nocam }}"
+  data-text-unsupported="{{ t_unsupported }}"
+  data-text-frame-loading="{{ t_frame_loading }}"
+  data-text-frame-failed="{{ t_frame_failed }}">
+  <button type="button" id="tryon-open" class="btn btn-lg min-h-16 w-full border-2 border-base-content/60 bg-base-100 text-xl">{% trans "Try on live" %}</button>
+  <p class="cf-note">{% trans "Your camera picture stays on this phone and is not saved. Frame pictures load from Cloudinary." %}</p>
+  <p class="cf-note">{% trans "Frame size and fit are approximate." %}</p>
+  <p id="tryon-note" class="cf-note font-semibold" role="status"></p>
+</section>
+
+<div id="tryon-panel" class="tryon-panel" hidden>
+  <div id="tryon-stage" class="tryon-stage">
+    <div class="tryon-mirror">
+      <video id="tryon-video" playsinline muted autoplay></video>
+      <canvas id="tryon-canvas"></canvas>
+    </div>
+    <p id="tryon-status" class="tryon-status" role="status"></p>
+    <button type="button" id="tryon-close" class="tryon-close">{% trans "Done" %}</button>
+  </div>
+  <ul class="tryon-grid">
+    {% for frame in frames %}{% if frame.tryon_image_url %}
+    <li>
+      <button type="button" class="tryon-frame" aria-pressed="false"
+        data-url="{{ frame.tryon_image_url }}"
+        data-factor="{{ frame.tryon_width_factor|unlocalize }}">
+        <img src="{% static frame.image_file %}" alt="" width="80" height="40">
+        <span>{{ frame.name }}</span>
+      </button>
+    </li>
+    {% endif %}{% endfor %}
+  </ul>
 </div>
 
-<p class="mt-3 text-base font-medium">{% trans "Styling suggestion only. Try frames on and choose what you like." %}</p>
-{% if from_photo %}
-<p class="mt-2 text-base">{% trans "Your photo was not saved." %}</p>
-{% endif %}
-
-<div class="mt-6 space-y-3">
+<div class="cf-stack mt-6">
   {% if also %}
-  <a class="btn btn-lg min-h-16 w-full border-2 border-base-content/60 bg-base-100 text-xl" href="{% url 'sunglasses:shape_detail' shop_slug=shop.slug shape_slug=also.slug %}{% if from_photo %}?source=photo{% endif %}">{% trans "Also possible:" %} {{ also.name }}. {% trans "See its frames" %}</a>
+  <a class="btn min-h-12 w-full border-2 border-base-content/60 bg-base-100 text-lg" href="{% url 'sunglasses:shape_detail' shop_slug=shop.slug shape_slug=also.slug %}{% if from_photo %}?source=photo{% endif %}">{% trans "Also possible:" %} {{ also.name }}. {% trans "See its frames" %}</a>
   {% endif %}
-  <a class="btn btn-lg min-h-16 w-full border-2 border-base-content/60 bg-base-100 text-xl" href="{% url 'sunglasses:intro' shop_slug=shop.slug %}">{% trans "Not like your face? Try again" %}</a>
-  <a class="btn btn-lg min-h-16 w-full border-2 border-base-content/60 bg-base-100 text-xl" href="{% url 'advisor:shop_menu' shop_slug=shop.slug %}">{% trans "Back to menu" %}</a>
+  <p class="text-center"><a class="cf-link" href="{% url 'sunglasses:intro' shop_slug=shop.slug %}">{% trans "Not like your face? Try again" %}</a></p>
 </div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/tryon_engine.js' %}" defer></script>
+<script src="{% static 'js/sunglasses_tryon.js' %}" defer></script>
 {% endblock %}

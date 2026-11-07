@@ -1,3 +1,4 @@
+from django.templatetags.static import static
 from rest_framework import serializers
 
 from catalog.models import BottomType, ColorFamily, GarmentType
@@ -74,6 +75,20 @@ class ShapeSerializer(serializers.ModelSerializer):
 
 
 class FrameStyleSerializer(serializers.ModelSerializer):
+    image_url = serializers.SerializerMethodField()
+
     class Meta:
         model = FrameStyle
-        fields = ["name", "slug", "note", "rank", "image_file"]
+        fields = [
+            "name",
+            "slug",
+            "note",
+            "rank",
+            "image_file",
+            "image_url",
+            "tryon_image_url",
+            "tryon_width_factor",
+        ]
+
+    def get_image_url(self, frame):
+        return static(frame.image_file)

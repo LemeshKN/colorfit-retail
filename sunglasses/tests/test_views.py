@@ -81,12 +81,12 @@ def test_shapes_page_lists_active_shapes_only(client, shop, on):
     assert "Square" not in html
 
 
-def test_frames_come_first_in_rank_order_then_the_shape(client, shop, on):
+def test_shape_comes_first_then_frames_in_rank_order(client, shop, on):
     oval = make_shape("Oval")
     make_frame(oval, "Second", 2)
     make_frame(oval, "First", 1)
     html = client.get(url("shape_detail", shop, "oval")).content.decode()
-    assert html.index("First</p>") < html.index("Second</p>") < html.index("Face shape:")
+    assert html.index("Face shape:") < html.index("First</p>") < html.index("Second</p>")
     assert "First note" in html
     assert "Try frames on and choose what you like." in html
     assert "often suit this face shape" not in html
@@ -154,7 +154,7 @@ def test_intro_has_both_photo_buttons_and_the_privacy_note(client, shop, on):
     assert "not uploaded or saved" in html
     assert "/api/v1/sunglasses/classify/" in html
     assert 'id="cam-open"' in html
-    assert 'id="cam-video"' in html
+    assert 'id="live-video"' in html
 
 
 def test_cut_off_reason_has_its_own_message(client, shop, on):
