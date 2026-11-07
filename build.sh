@@ -16,3 +16,4 @@ python manage.py seed_catalog
 #python manage.py seed_pairings
 python manage.py seed_face_shapes
 python manage.py seed_frame_styles
+python manage.py set_tryon_urls
