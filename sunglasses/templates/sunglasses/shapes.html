@@ -1,16 +1,23 @@
 {% extends "advisor/base.html" %}{% load i18n static %}
 {% block title %}{% trans "Pick a face shape" %}{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/tryon.css' %}">{% endblock %}
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
 {% block content %}
-<a class="btn mb-4 min-h-12" href="{% url 'sunglasses:intro' shop_slug=shop.slug %}">&larr; {% trans "Back" %}</a>
-<h1 class="mb-4 text-2xl font-bold">{% trans "Pick a face shape" %}</h1>
-<ul class="grid grid-cols-2 gap-3">
-  {% for shape in shapes %}
-  <li>
-    <a class="flex min-h-40 flex-col items-center justify-center gap-2 rounded-box border-2 border-base-content/60 bg-base-100 p-3 text-lg font-semibold" href="{% url 'sunglasses:shape_detail' shop_slug=shop.slug shape_slug=shape.slug %}">
-      <img src="{% static 'img/shapes/'|add:shape.slug|add:'.svg' %}" alt="" width="96" height="120">
-      <span>{{ shape.name }}</span>
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+<div class="gs-page">
+  <a class="gi-back" href="{% url 'sunglasses:intro' shop_slug=shop.slug %}">&larr; {% trans "Back" %}</a>
+  <h1 class="gs-title">{% trans "Pick a face shape" %}</h1>
+  <p class="gs-sub">{% trans "Choose the shape that looks most like you. This helps us suggest sunglasses that feel just right." %}</p>
+  <ul class="gs-grid">
+    {% for shape in shapes %}
+    <li>
+      <a class="gs-card" href="{% url 'sunglasses:shape_detail' shop_slug=shop.slug shape_slug=shape.slug %}">
+        {% if shape.image_url %}<img src="{{ shape.image_url }}" alt="" width="77" height="96">{% else %}<img src="{% static 'img/shapes/'|add:shape.slug|add:'.svg' %}" alt="" width="77" height="96">{% endif %}
+        <span>{{ shape.name }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="gs-note">{% trans "Not sure? Pick the closest match. You can always change it later." %}</p>
+</div>
 {% endblock %}

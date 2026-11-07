@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}ColorFit{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/app.css' %}">
+  {% block head %}{% endblock %}
 </head>
 <body class="min-h-screen bg-base-100 text-base-content">
+  {% block header %}
   <header class="navbar bg-base-200 px-4">
     <a class="flex-1 text-xl font-bold" href="{% url 'advisor:find_shop' %}">ColorFit</a>
     <form action="{% url 'set_language' %}" method="post" class="flex gap-2">
@@ -16,6 +18,7 @@
       <button type="submit" name="language" value="hi" class="btn btn-sm">हिन्दी</button>
     </form>
   </header>
+  {% endblock %}
   <main class="mx-auto w-full max-w-md p-4">
     {% block content %}{% endblock %}
   </main>
@@ -24,5 +27,6 @@
     {% trans "All advice here is a styling suggestion. Colors on your screen vary by phone and brightness." %}
   </footer>
   {% endblock %}
+  {% block scripts %}{% endblock %}
 </body>
 </html>

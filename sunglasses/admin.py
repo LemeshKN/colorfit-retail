@@ -51,6 +51,10 @@ class FaceShapeRuleAdmin(admin.ModelAdmin):
 
 @admin.register(FrameStyle)
 class FrameStyleAdmin(admin.ModelAdmin):
-    list_display = ["name", "shape", "rank", "image_file"]
+    list_display = ["name", "shape", "rank", "image_file", "has_tryon"]
     list_filter = ["shape"]
     prepopulated_fields = {"slug": ("name",)}
+
+    @admin.display(boolean=True, description="Try-on image")
+    def has_tryon(self, obj):
+        return bool(obj.tryon_image_url)

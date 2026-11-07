@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 from django.db.models import Count
 
 from .models import FaceShapeRule, FrameStyle
+from .validators import validate_cloudinary_url
 
 EXPECTED_SHAPES = 6
 FRAMES_PER_SHAPE = 3
@@ -124,3 +125,29 @@ def check_sunglasses_health():
         if shape.n_frames < FRAMES_PER_SHAPE:
             report.short_shapes.append({"shape": shape, "frames": shape.n_frames})
     return report
+
+def apply_tryon_urls(urls):
+    """Set the try-on image link on every frame style with a matching slug.
+
+    urls maps a frame slug to a Cloudinary link. Every link is checked first,
+    so one bad link changes nothing. Returns {slug: rows updated}.
+    """
+    for url in urls.values():
+        validate_cloudinary_url(url)
+    return {
+        slug: FrameStyle.objects.filter(slug=slug).update(tryon_image_url=url)
+        for slug, url in urls.items()
+    }
+
+def apply_shape_image_urls(urls):
+    """Set the picture link on each face shape, matched by slug.
+
+    Every link is checked first, so one bad link changes nothing.
+    Returns {slug: rows updated}.
+    """
+    for url in urls.values():
+        validate_cloudinary_url(url)
+    return {
+        slug: FaceShapeRule.objects.filter(slug=slug).update(image_url=url)
+        for slug, url in urls.items()
+    }

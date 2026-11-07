@@ -1,6 +1,8 @@
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
+from .validators import validate_cloudinary_url
+
 RATIO_RULES = [MinValueValidator(0.1), MaxValueValidator(5)]
 
 
@@ -25,6 +27,14 @@ class FaceShapeRule(models.Model):
         validators=RATIO_RULES, help_text="Jaw width divided by cheekbone width."
     )
     is_active = models.BooleanField(default=True)
+        
+    image_url = models.URLField(
+        max_length=300,
+        blank=True,
+        validators=[validate_cloudinary_url],
+        help_text="Cloudinary picture of this face shape. "
+        "Leave empty to use the built-in drawing.",
+    )
 
     class Meta:
         ordering = ["sort_order", "name"]
@@ -50,6 +60,20 @@ class FrameStyle(models.Model):
     )
     rank = models.PositiveSmallIntegerField(
         default=1, help_text="1 is shown first."
+    )
+
+    tryon_image_url = models.URLField(
+        max_length=300,
+        blank=True,
+        validators=[validate_cloudinary_url],
+        help_text="Transparent PNG on Cloudinary for the live try-on. "
+        "Leave empty to hide the try-on for this frame.",
+    )
+    tryon_width_factor = models.FloatField(
+        default=1.6,
+        validators=[MinValueValidator(0.8), MaxValueValidator(3)],
+        help_text="Frame width divided by the distance between the outer eye "
+        "corners. Tune it on a real phone.",
     )
 
     class Meta:
