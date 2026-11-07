@@ -2,32 +2,33 @@
 {% block title %}{% trans "Frame styles for you" %}{% endblock %}
 {% block head %}<link rel="stylesheet" href="{% static 'css/tryon.css' %}">{% endblock %}
 {% block footer %}{% endblock %}
+{% block header %}{% endblock %}
 {% block content %}
-<a class="btn mb-4 min-h-12" href="{% url 'advisor:shop_menu' shop_slug=shop.slug %}">&larr; {% trans "Menu" %}</a>
-
-<div class="flex items-center gap-4">
-  {% if shape.image_url %}<img src="{{ shape.image_url }}" alt="" width="88" height="110">{% else %}<img src="{% static 'img/shapes/'|add:shape.slug|add:'.svg' %}" alt="" width="88" height="110">{% endif %}
-  <div>
-    <p class="text-xl font-bold">{% trans "Face shape:" %} {{ shape.name }}</p>
-    <p class="cf-note font-medium">{% trans "Styling suggestion only. Try frames on and choose what you like." %}</p>
-    {% if from_photo %}<p class="cf-note">{% trans "Your photo was not saved." %}</p>{% endif %}
-  </div>
-</div>
-
-<h1 class="mb-3 mt-5 text-2xl font-bold">{% trans "Frame styles for you" %}</h1>
-<ul class="space-y-3">
-  {% for frame in frames %}
-  <li class="flex items-center gap-4 rounded-box border-2 border-base-content/60 bg-base-100 p-3">
-    <img src="{% static frame.image_file %}" alt="" width="96" height="48">
+<div class="gd-page">
+       <a class="gd-menu gd-menu-top" href="{% url 'advisor:shop_menu' shop_slug=shop.slug %}">&larr; {% trans "Menu" %}</a>
+  <div class="gd-top">
+    {% if shape.image_url %}<img src="{{ shape.image_url }}" alt="" width="64" height="80">{% else %}<img src="{% static 'img/shapes/'|add:shape.slug|add:'.svg' %}" alt="" width="64" height="80">{% endif %}
     <div>
-      <p class="text-xl font-semibold">{{ frame.name }}</p>
-      <p class="text-base">{{ frame.note }}</p>
+      <p class="gd-shape">{% trans "Face shape:" %} {{ shape.name }}</p>
+      <p class="gd-hint">{% trans "Styling suggestion only. Try frames on and choose what you like." %}</p>
+      {% if from_photo %}<p class="gd-hint">{% trans "Your photo was not saved." %}</p>{% endif %}
     </div>
-  </li>
-  {% empty %}
-  <li>{% trans "No frame styles yet." %}</li>
-  {% endfor %}
-</ul>
+  </div>
+
+  <h1 class="gd-h1">{% trans "Frame styles for you" %}</h1>
+  <ul class="gd-cards">
+    {% for frame in frames %}
+    <li class="gd-card">
+      <img src="{% static frame.image_file %}" alt="" width="72" height="36">
+      <div>
+        <p class="gd-name">{{ frame.name }}</p>
+        <p class="gd-note">{{ frame.note }}</p>
+      </div>
+    </li>
+    {% empty %}
+    <li>{% trans "No frame styles yet." %}</li>
+    {% endfor %}
+  </ul>
 
 {% translate "Opening the camera..." as t_opening %}
 {% translate "Loading the face tracker..." as t_loading %}
@@ -37,7 +38,7 @@
 {% translate "This phone cannot run the live try-on." as t_unsupported %}
 {% translate "Loading this frame..." as t_frame_loading %}
 {% translate "This frame picture could not load." as t_frame_failed %}
-<section id="tryon" class="mt-6" hidden
+<section id="tryon" hidden
   data-text-opening="{{ t_opening }}"
   data-text-loading="{{ t_loading }}"
   data-text-look-at="{{ t_look }}"
@@ -46,10 +47,10 @@
   data-text-unsupported="{{ t_unsupported }}"
   data-text-frame-loading="{{ t_frame_loading }}"
   data-text-frame-failed="{{ t_frame_failed }}">
-  <button type="button" id="tryon-open" class="btn btn-lg min-h-16 w-full border-2 border-base-content/60 bg-base-100 text-xl">{% trans "Try on live" %}</button>
-  <p class="cf-note">{% trans "Your camera picture stays on this phone and is not saved. Frame pictures load from Cloudinary." %}</p>
-  <p class="cf-note">{% trans "Frame size and fit are approximate." %}</p>
-  <p id="tryon-note" class="cf-note font-semibold" role="status"></p>
+  <button type="button" id="tryon-open" class="gd-try">{% trans "Try on live" %}</button>
+  <p class="gd-priv">{% trans "Your camera stream stays private and is never stored. Frame previews load securely." %}</p>
+  <p class="gd-priv">{% trans "Frame size and fit are approximate." %}</p>
+  <p id="tryon-note" class="gd-priv" role="status"></p>
 </section>
 
 <div id="tryon-panel" class="tryon-panel" hidden>
@@ -75,11 +76,12 @@
   </ul>
 </div>
 
-<div class="cf-stack mt-6">
   {% if also %}
-  <a class="btn min-h-12 w-full border-2 border-base-content/60 bg-base-100 text-lg" href="{% url 'sunglasses:shape_detail' shop_slug=shop.slug shape_slug=also.slug %}{% if from_photo %}?source=photo{% endif %}">{% trans "Also possible:" %} {{ also.name }}. {% trans "See its frames" %}</a>
+  <a class="gd-also" href="{% url 'sunglasses:shape_detail' shop_slug=shop.slug shape_slug=also.slug %}{% if from_photo %}?source=photo{% endif %}">{% trans "Also possible:" %} {{ also.name }}. {% trans "See its frames" %}</a>
   {% endif %}
-  <p class="text-center"><a class="cf-link" href="{% url 'sunglasses:intro' shop_slug=shop.slug %}">{% trans "Not like your face? Try again" %}</a></p>
+       <div class="gd-bottom">
+       <a class="gd-again" href="{% url 'sunglasses:intro' shop_slug=shop.slug %}">{% trans "Not like your face? Try again" %}</a>
+     </div>
 </div>
 {% endblock %}
 {% block scripts %}
