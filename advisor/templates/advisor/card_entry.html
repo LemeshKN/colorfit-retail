@@ -3,20 +3,33 @@
 {% block content %}
 <h1 class="mb-1 text-2xl font-bold">{{ shop.name }}</h1>
 <p class="mb-4">{% trans "Enter the card ID that the staff gave you." %}</p>
+
+<div style="background:#eff6ff;border:2px solid #3b82f6;border-radius:0.75rem;padding:1rem;margin-bottom:1.25rem;">
+  <p style="color:#1d4ed8;font-weight:700;font-size:1rem;margin:0 0 0.5rem;">ℹ️ How this works</p>
+  <p style="color:#1e3a8a;font-size:0.9375rem;margin:0 0 0.5rem;line-height:1.5;">Staff hold printed color cards next to your skin and find the closest match. They give you a short code like <strong>ST-07</strong>. Enter that code below to see colors and styles that suit you.</p>
+  <p style="color:#1d4ed8;font-weight:700;font-size:0.9375rem;margin:0;">🎯 Trying the demo? Use card ID: <strong>ST-07</strong></p>
+</div>
+
 <form method="post" class="space-y-3">
   {% csrf_token %}
   {% if needs_key %}
-  <label for="shop_key" class="block font-semibold">{% trans "Shop pass key" %}</label>
-  <input id="shop_key" name="shop_key" type="password" autocomplete="off" required class="input input-bordered input-lg w-full">
-  {% if key_error %}
-  <p class="font-semibold text-error">{{ key_error }}</p>
+  <div>
+    <label for="shop_key" class="block font-semibold mb-1">{% trans "Shop code" %}</label>
+    <p class="text-sm text-base-content/60 mb-1">{% trans "Ask the staff for this code." %}</p>
+    <input id="shop_key" name="shop_key" type="password" autocomplete="off" required class="input input-bordered input-lg w-full">
+    {% if key_error %}
+    <p class="font-semibold text-error mt-1">{{ key_error }}</p>
+    {% endif %}
+  </div>
   {% endif %}
-  {% endif %}
-  <label for="{{ form.card_id.id_for_label }}" class="block font-semibold">{{ form.card_id.label }}</label>
-  {{ form.card_id }}
-  {% for error in form.card_id.errors %}
-  <p class="font-semibold text-error">{{ error }}</p>
-  {% endfor %}
+  <div>
+    <label for="{{ form.card_id.id_for_label }}" class="block font-semibold mb-1">{% trans "Skin tone card ID" %}</label>
+    <p class="text-sm text-base-content/60 mb-1">{% trans "The short code on your color card, for example ST-07." %}</p>
+    {{ form.card_id }}
+    {% for error in form.card_id.errors %}
+    <p class="font-semibold text-error mt-1">{{ error }}</p>
+    {% endfor %}
+  </div>
   <button type="submit" class="btn btn-primary btn-lg w-full">{% trans "Continue" %}</button>
 </form>
 <p class="mt-6 text-sm">{% trans "This site remembers your device to count visits. It does not store your name or photo." %}</p>
