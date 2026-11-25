@@ -15,8 +15,7 @@
   {% if needs_key %}
   <div>
     <label for="shop_key" class="block font-semibold mb-1">{% trans "Shop code" %}</label>
-    <p class="text-sm text-base-content/60 mb-1">{% trans "Ask the staff for this code." %}</p>
-    <input id="shop_key" name="shop_key" type="password" autocomplete="off" required class="input input-bordered input-lg w-full">
+    <p class="text-sm text-base-content/60 mb-1">{% trans "Demo visitors: shop code is 1234." %}</p>    <input id="shop_key" name="shop_key" type="password" autocomplete="off" required class="input input-bordered input-lg w-full">
     {% if key_error %}
     <p class="font-semibold text-error mt-1">{{ key_error }}</p>
     {% endif %}
